@@ -45,6 +45,7 @@ Inspect the simulation design.
 ```r
 targets::tar_visnetwork(targets_only = TRUE)
 ```
+![](vis/pipeline.png)
 
 Inspect the built pipeline graph.
 
