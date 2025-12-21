@@ -14,6 +14,22 @@ The simulation provides us with a way of **exploring** *before any lengthy extra
 
 The goal is to explore **minimal representations that faithfully align with the experiment's core results**, not find the perfect sampling technique or predict analyst behaviour.  
 
+## graph visualisations
+
+Graph visualisations illustrate the diversity of how analysts decompose. This project explores different graph presentations. 
+
+We are using [`ggraph`](https://ggraph.data-imaginist.com/) to create the visualisations. 
+
+> Todo: add caption highlighting most-popular source columns and outcomes
+
+### all analyses graph
+
+![](vis/horrendogram.png)
+
+### popular analyses graph
+
+![](vis/popular.png)
+
 ## simulation study for analytic question decomposition
 
 The targets pipeline simulates how different analysts might use source columns to decompose the given domain question into an analytic question with the same data (in terms of source columns).
@@ -62,21 +78,7 @@ The `poc/poc.R` file is the original script where the simulation was prototyped 
   - (future extension possibility: source → transformation → outcome edges, but not in first pass)
 - we will explore fans, weight, or alpha in the visualisation for edge density
 
-## graph visualisations
 
-Graph visualisations illustrate the diversity of how analysts decompose. This project explores different graph presentations. 
-
-We are using [`ggraph`](https://ggraph.data-imaginist.com/) to create the visualisations. 
-
-> Todo: add caption highlighting most-popular source columns and outcomes
-
-### all analyses graph
-
-![](vis/horrendogram.png)
-
-### popular analyses graph
-
-![](vis/popular.png)
 
 ## extensibility
 
