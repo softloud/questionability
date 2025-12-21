@@ -11,7 +11,7 @@ plot_horrendogram <- function(graph) {
       size = n_analyses, 
       shape = node_type)) +
     scale_edge_linetype_manual(
-      values = c("source_source" = "dashed", "source_outcome" = "solid")
+      values = c("source_source" = "dotted", "source_outcome" = "solid")
     ) +
     theme_graph() +
     scale_colour_manual(values = c("source_col" = "#6699CC", "outcome" = "#CC6677"))
