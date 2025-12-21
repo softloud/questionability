@@ -138,6 +138,20 @@ list(
       plot = plot_graph_popular,
       width = 8,
       height = 6
-  ))
+  )),
+
+  # validation on a single analysis
+  tar_target(
+    name = single_analysis,
+    simulated_analyses |> slice(1)
+  ),
+  tar_target(
+    name = validation_results,
+    {
+      result <- validate_full(single_analysis, column_index)
+      stopifnot("validation failed" = result$all_passed)
+      result
+    }
+  )
 
 )

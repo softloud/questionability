@@ -13,13 +13,18 @@ get_outcome_nodes <- function(analyses) {
 }
 
 get_source_col_nodes <- function(analyses, column_index) {
-  # count how many analyses used each source_col
+  # count how many analyses used each source_col, with outcome breakdown
   analyses |>
     select(analysis_id, source_cols, outcome_type) |>
     unnest(c(source_cols)) |>
-    select(analysis_id, source_col = source_cols) |>
+    rename(source_col = source_cols) |>
+    group_by(source_col, outcome_type) |>
+    summarise(n = n(), .groups = "drop") |>
     group_by(source_col) |>
-    summarise(n_analyses = n()) |>
+    summarise(
+      n_analyses = sum(n),
+      outcome_counts = list(setNames(n, outcome_type))
+    ) |>
     left_join(column_index, by = c("source_col" = "col_index")) |>
     mutate(
       node_type = 'source_col') |>

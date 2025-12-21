@@ -1,2 +1,7 @@
 # Ignore targets cache
 _targets/
+
+# Ignore Quarto cache and output
+.quarto/
+*_files/
+*_cache/

@@ -9,7 +9,7 @@ get_source_outcome_edges <- function(analyses) {
 
 get_source_source_edges <- function(analyses) {
   analyses |>
-  select(analysis_id, source_cols) |>
+  select(analysis_id, source_cols, outcome_type) |>
   mutate(
     edges = map(source_cols,
       ~combn(.x, 2, simplify = FALSE) |> 
@@ -19,7 +19,7 @@ get_source_source_edges <- function(analyses) {
         )
     )
   )) |>
-  select(edges, analysis_id) |>
+  select(edges, analysis_id, outcome_type) |>
   unnest(edges) |>
   unnest(edges) |>
   ungroup() |>
@@ -31,9 +31,12 @@ get_edges <- function(source_outcome_edges, source_source_edges) {
     source_outcome_edges,
     source_source_edges
   ) |>
+  group_by(from, to, edge_type, outcome_type) |>
+  summarise(n = n(), .groups = "drop") |>
   group_by(from, to, edge_type) |>
   summarise(
-    n_analyses = n()
-  ) |>
-  ungroup()
+    n_analyses = sum(n),
+    outcome_counts = list(setNames(n, outcome_type)),
+    .groups = "drop"
+  )
 }
