@@ -79,7 +79,9 @@ The `poc/poc.R` file is the original script where the simulation was prototyped 
   - (future extension possibility: source → transformation → outcome edges, but not in first pass)
 - we will explore fans, weight, or alpha in the visualisation for edge density
 
+## validation
 
+Open `validation/validate_graph.html` in your browser to inspect the validation report for the graph structure.
 
 ## extensibility
 

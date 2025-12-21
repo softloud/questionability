@@ -140,7 +140,7 @@ list(
       height = 6
   )),
 
-  # validation on a single analysis
+  # validation: check one analysis is correctly in the final graph
   tar_target(
     name = single_analysis,
     simulated_analyses |> slice(1)
@@ -148,7 +148,7 @@ list(
   tar_target(
     name = validation_results,
     {
-      result <- validate_full(single_analysis, column_index)
+      result <- validate_analysis_in_graph(single_analysis, graph, column_index)
       stopifnot("validation failed" = result$all_passed)
       result
     }
