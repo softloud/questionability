@@ -52,7 +52,7 @@ list(
     source_col_use_prob,
     list(
       # how often the often used occur
-      often_used = 0.7,
+      often_used = 0.4,
       sometimes_used = 0.05
     )
   ),

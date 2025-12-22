@@ -36,6 +36,10 @@ get_nodes <- function(outcome_nodes, source_col_nodes) {
     outcome_nodes |>
       rename(node = outcome_type),
     source_col_nodes |>
-      rename(node = source_col))
+      rename(node = source_col)) |>
+    mutate(
+      # for bipartite plotting
+      type = node_type != 'outcome'
+    )
 }
 

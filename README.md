@@ -12,7 +12,7 @@ The simulation provides us with a way of **exploring** *before any lengthy extra
 
 ## minimal representations of core results
 
-The goal is to explore **minimal representations that faithfully align with the experiment's core results**, not find the perfect sampling technique or predict analyst behaviour.  
+The goal is to explore **minimal representations that faithfully align with the experiment's core results, privileging interpretability**. 
 
 ## graph visualisations
 
