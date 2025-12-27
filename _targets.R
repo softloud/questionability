@@ -14,7 +14,8 @@ tar_option_set(
     "purrr",
     "tidyr",
     "ggraph",
-    "tidygraph"
+    "tidygraph",
+    "stringr"
   )
 )
 
@@ -25,7 +26,16 @@ tar_source()
 # NB use tar_visnetwork(targets_only = TRUE) to make sense of this
 
 list(
+  # colour palette
+  tar_target(
+    name = palette,
+    list(
+      source_col = "#5898c0",
+      outcome = "#C9A227"
+    )
+  ),
 
+  # simulation factory
   # simulation parameters --- tweak these to play!
   tar_target(
     name = data_bluetit,
@@ -33,7 +43,7 @@ list(
   ),
   tar_target(
     name = n_analyses,
-    # n bluetit analyses 142, n eucalyptus 85
+    # n bluetit analyses 142, n empalyptus 85
     142
   ),
   tar_target(
@@ -152,6 +162,48 @@ list(
       stopifnot("validation failed" = result$all_passed)
       result
     }
-  )
+  ),
 
+  # empalypt
+  tar_target(
+    name = emp_raw,
+    read_csv("data-many-analysts/master_data_Charles_euc.csv")
+  ),
+
+  tar_target(
+    name = emp_dat,
+    se_clean_analyses(emp_raw)
+  ),
+
+  tar_target(
+    name = emp_analyses_sourcecols,
+    get_long(emp_dat)
+  ),
+
+  tar_target(
+    name = emp_analyses,
+    get_analyses(emp_dat, emp_analyses_sourcecols)
+  ),
+
+  tar_target(
+    name = emp_model_levels,
+    get_model_levels(emp_dat)
+  ),
+
+  tar_target(
+    name = emp_model_summary,
+    get_model_summary(emp_model_levels)
+  ),
+
+  tar_target(
+    name = emp_barplot,
+    generate_emp_barplot_png(emp_analyses_sourcecols, palette)
+  ),
+
+  tar_target(
+    name = emp_barplot_slide,
+    generate_emp_barplot_png(emp_analyses_sourcecols, 
+      palette, pct_cutoff = 0.35, fig_height = 10)
+
+  )
 )

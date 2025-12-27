@@ -86,3 +86,11 @@ Open `validation/validate_graph.html` in your browser to inspect the validation 
 ## extensibility
 
 A final note, this simulation is readily extensible to other analytic questions by swapping out the dataset read and tweaking expected parameter objects in the pipeline. 
+
+## Eucalypt analysis
+
+Inspect the eucalypt data analysis
+
+```r
+tar_visnetwork(names = starts_with("emp"), targets_only = TRUE)
+```
