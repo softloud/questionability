@@ -1,4 +1,4 @@
-get_long <- function(wide_dat) {
+get_long <- function(wide_dat, column_index) {
   wide_dat %>%
   dplyr::select(
     -estimate, -link_function_reported, -linear_model, -model_subclass) %>%
@@ -9,5 +9,6 @@ get_long <- function(wide_dat) {
     ) |>
     dplyr::mutate(
       col_used = if_else(is.na(col_used), 0, col_used)
-    )
+    ) |>
+    dplyr::left_join(column_index, by = c("source_col" = "col_name"))
 }

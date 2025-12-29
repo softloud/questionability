@@ -35,8 +35,7 @@ list(
     )
   ),
 
-  # simulation factory
-  # simulation parameters --- tweak these to play!
+  # simulation factory - tweak parameters to play with the simulations ----
   tar_target(
     name = data_bluetit,
     read_csv("data-many-analysts/blue_tit_data_updated_2020-04-18.csv")
@@ -164,7 +163,7 @@ list(
     }
   ),
 
-  # empalypt
+  # empalypt ----
   tar_target(
     name = emp_raw,
     read_csv("data-many-analysts/master_data_Charles_euc.csv")
@@ -177,7 +176,7 @@ list(
 
   tar_target(
     name = emp_analyses_sourcecols,
-    get_long(emp_dat)
+    get_long(emp_dat, emp_column_index)
   ),
 
   tar_target(
@@ -204,6 +203,86 @@ list(
     name = emp_barplot_slide,
     generate_emp_barplot_png(emp_analyses_sourcecols, 
       palette, pct_cutoff = 0.35, fig_height = 10)
+  ),
 
-  )
+  tar_target(
+    name = emp_column_index,
+    get_column_index(colnames(emp_dat))
+  ),
+
+  # hairball
+  tar_target(
+    name = emp_outcome_nodes,
+    get_outcome_nodes(emp_analyses)
+  ),
+
+  tar_target(
+    name = emp_source_col_nodes,
+    get_source_col_nodes(emp_analyses, emp_column_index)
+  ),
+
+  tar_target(
+    name = emp_nodes,
+    get_nodes(emp_outcome_nodes, emp_source_col_nodes)
+  ),
+
+  tar_target(
+    name = emp_source_outcome_edges,
+    get_source_outcome_edges(emp_analyses)
+  ),
+
+  tar_target(
+    name = emp_source_source_edges,
+    get_source_source_edges(emp_analyses |> dplyr::filter(n_source_cols >= 2))
+  ),
+
+  tar_target(
+    name = emp_edges,
+    get_edges(emp_source_outcome_edges, emp_source_source_edges)
+  ),
+
+  tar_target(
+    name = emp_hairball,
+    tbl_graph(nodes = emp_nodes, edges = emp_edges
+    )
+  ),
+
+  tar_target(
+    name = emp_hairball_plot,
+    plot_horrendogram(emp_hairball)
+  ),
+
+  tar_target(
+    name = save_emp_hairball,
+    ggsave(
+      filename = "vis/emp_hairball.png",
+      plot = emp_hairball_plot,
+      width = 8,
+      height = 6
+    )),
+
+    tar_target(
+      name = emp_hairball_popular,
+      # filter the graph to top 25% most analysed variables
+      {emp_hairball |>
+          activate(nodes) |>
+          filter(n_analyses >= quantile(n_analyses, 0.75))
+      }
+    ),
+
+    tar_target(
+      name = emp_hairball_popular_plot,
+      plot_horrendogram(emp_hairball_popular)
+    ),
+
+    tar_target(
+      name = save_emp_hairball_popular,
+      ggsave(
+        filename = "vis/emp_hairball_popular.png",
+        plot = emp_hairball_popular_plot,
+        width = 8,
+        height = 6
+      )
+    )
+
 )
