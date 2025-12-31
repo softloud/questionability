@@ -41,16 +41,16 @@ list(
     read_csv("data-many-analysts/blue_tit_data_updated_2020-04-18.csv")
   ),
   tar_target(
-    name = n_analyses,
+    name = sim_n_analyses,
     # n bluetit analyses 142, n empalyptus 85
     142
   ),
   tar_target(
-    name = source_col_range,
+    name = sim_source_col_range,
     c(4, 15)
   ),
   tar_target(
-    source_col_dist,
+    sim_source_col_dist,
     list(
       # how many source columns are
       always_used = 3,
@@ -58,7 +58,7 @@ list(
     )
   ),
   tar_target(
-    source_col_use_prob,
+    name = sim_source_col_use_prob,
     list(
       # how often the often used occur
       often_used = 0.4,
@@ -68,83 +68,83 @@ list(
 
   # pipeline --- here be dragons that can break
   tar_target(
-    name = column_index,
+    name = sim_column_index,
     get_column_index(colnames(data_bluetit))
   ),
   tar_target(
-    name = source_col_likelihood,
+    name = sim_source_col_likelihood,
     set_source_col_likelihood(
-      column_index, source_col_dist, source_col_use_prob)
+      sim_column_index, sim_source_col_dist, sim_source_col_use_prob)
   ),
   tar_target(
     name = simulated_analyses,
-    get_sim_analyses(n_analyses, source_col_range, source_col_likelihood)
+    get_sim_analyses(sim_n_analyses, sim_source_col_range, sim_source_col_likelihood)
   ),
   tar_target(
-    name = outcome_nodes, 
+    name = sim_outcome_nodes, 
     get_outcome_nodes(simulated_analyses)
   ),
   tar_target(
-    name = source_col_nodes,
-    get_source_col_nodes(simulated_analyses, column_index)
+    name = sim_source_col_nodes,
+    get_source_col_nodes(simulated_analyses, sim_column_index)
   ),
   tar_target(
-    name = nodes,
-    get_nodes(outcome_nodes, source_col_nodes)
+    name = sim_nodes,
+    get_nodes(sim_outcome_nodes, sim_source_col_nodes)
   ),
   tar_target(
-    name = source_outcome_edges,
+    name = sim_source_outcome_edges,
     get_source_outcome_edges(simulated_analyses)
   ),
   tar_target(
-    name = source_source_edges,
+    name = sim_source_source_edges,
     get_source_source_edges(simulated_analyses)
   ),
   tar_target(
-    name = edges,
-    get_edges(source_outcome_edges, source_source_edges)
+    name = sim_edges,
+    get_edges(sim_source_outcome_edges, sim_source_source_edges)
   ),
 
   # graphs
   tar_target(
-    name = graph,
-    tbl_graph(nodes = nodes, edges = edges
+    name = sim_graph,
+    tbl_graph(nodes = sim_nodes, edges = sim_edges
     )
   ),
 
   tar_target(
-    name = graph_popular,
+    name = sim_graph_popular,
     # filter the graph to top 25% most analysed variables
-    {graph |>
+    {sim_graph |>
       activate(nodes) |>
-      filter(n_analyses >= quantile(n_analyses, 0.75))
+      filter(n_analyses >= quantile(1:sim_n_analyses, 0.75))
     }
   ),
 
   # visualisations
   tar_target(
-    name = horrendogram,
-    plot_horrendogram(graph)
+    name = sim_horrendogram,
+    plot_horrendogram(sim_graph)
   ),
   tar_target(
-    name = save_horrendogram,
+    name = sim_save_horrendogram,
     ggsave(
       filename = "vis/horrendogram.png",
-      plot = horrendogram,
+      plot = sim_horrendogram,
       width = 8,
       height = 6
   )),
 
   tar_target(
-    name = plot_graph_popular,
-    plot_horrendogram(graph_popular)
+    name = sim_plot_graph_popular,
+    plot_horrendogram(sim_graph_popular)
   ),
 
   tar_target(
-    name = save_popular,
+    name = sim_save_popular,
     ggsave(
       filename = "vis/popular.png",
-      plot = plot_graph_popular,
+      plot = sim_plot_graph_popular,
       width = 8,
       height = 6
   )),
@@ -157,13 +157,14 @@ list(
   tar_target(
     name = validation_results,
     {
-      result <- validate_analysis_in_graph(single_analysis, graph, column_index)
+      result <- validate_analysis_in_graph(
+        single_analysis, sim_graph, sim_column_index)
       stopifnot("validation failed" = result$all_passed)
       result
     }
   ),
 
-  # empalypt ----
+  # empirical ----
   tar_target(
     name = emp_raw,
     read_csv("data-many-analysts/master_data_Charles_euc.csv")
@@ -262,27 +263,36 @@ list(
     )),
 
     tar_target(
-      name = emp_hairball_popular,
+      name = emp_hairball_expected_graph,
       # filter the graph to top 25% most analysed variables
       {emp_hairball |>
           activate(nodes) |>
-          filter(n_analyses >= quantile(n_analyses, 0.75))
+          # todo debug
+          filter(n_analyses >= quantile(1:nrow(emp_analyses), 0.50))
       }
     ),
 
+    # assumption plot with expected popular nodes
+
     tar_target(
-      name = emp_hairball_popular_plot,
-      plot_horrendogram(emp_hairball_popular)
+      name = emp_hairball_expected_plot,
+      plot_horrendogram(
+        emp_hairball_expected_graph, label_nodes = TRUE, label_edges = TRUE)
     ),
 
     tar_target(
-      name = save_emp_hairball_popular,
+      name = save_emp_hairball_expected,
       ggsave(
-        filename = "vis/emp_hairball_popular.png",
-        plot = emp_hairball_popular_plot,
+        filename = "vis/emp_hairball_expected.png",
+        plot = emp_hairball_expected_plot,
         width = 8,
         height = 6
       )
+    ),
+
+    tar_target(
+      emp_analysts,
+      get_analysts(emp_analyses)
     )
 
 )

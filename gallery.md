@@ -4,9 +4,9 @@
 
 ![](vis/emp_hairball.png)
 
-## top 25% of eucalyptus outcomes & source columns
+## expectation hairball
 
-![](vis/emp_hairball_popular.png)
+![](vis/emp_hairball_expected.png)
 
 # source column counts
 
