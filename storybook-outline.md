@@ -18,7 +18,7 @@ will elicit effectively the same analytic interpretation regardless of domain sc
 
 **This experiment challenges that assumption.**
 
-## Exposing analytic diversity
+## [Exposing analytic diversity](https://github.com/users/softloud/projects/18/views/10?visibleFields=%5B%22Title%22%2C%22Labels%22%2C%22Status%22%2C%22Assignees%22%2C249832417%2C%22Parent+issue%22%2C%22Linked+pull+requests%22%2C%22Sub-issues+progress%22%2C%22Milestone%22%5D&pane=issue&itemId=148745787&issue=softloud%7Cquestionability%7C25)
 
 question -> data -> *scientist* -> **analysis** 
 
