@@ -4,17 +4,22 @@ This project explores graphical analyses of how different analysts might decompo
 
 A graph is a network determined by *nodes* and *edges*.
 
-The simulation provides us with a way of **exploring** *before any lengthy extraction of data*:
-
-- what kinds of visualisations might be useful to illustrate the diversity of analytic question decomposition;
-- what kinds of graph structures emerge from the decomposition process;
-- what data we need to extract and how it should be structured.
-
-## minimal representations of core results
+## Minimal Representations of Core Results
 
 The goal is to explore **minimal representations that faithfully align with the experiment's core results, privileging interpretability**. 
 
-## graph visualisations
+## Eucalypt Analysis
+
+The main analysis pipeline uses the eucalypt many-analysts dataset.
+
+Inspect the eucalypt data analysis:
+
+```r
+targets::tar_make()
+tar_visnetwork(names = starts_with("emp"), targets_only = TRUE)
+```
+
+## Graph Visualisations
 
 Graph visualisations illustrate the diversity of how analysts decompose. This project explores different graph presentations. 
 
@@ -22,75 +27,10 @@ We are using [`ggraph`](https://ggraph.data-imaginist.com/) to create the visual
 
 > Todo: add caption highlighting most-popular source columns and outcomes
 
-### all analyses graph
+## Simulation Study
 
-![](vis/horrendogram.png)
+The simulation study was used during development to explore graph structures before real data extraction. 
 
-### popular analyses graph
+📄 **[Full simulation documentation](docs/simulation-study.md)**
 
-![](vis/popular.png)
-
-## simulation study for analytic question decomposition
-
-The targets pipeline simulates how different analysts might use source columns to decompose the given domain question into an analytic question with the same data (in terms of source columns).
-
-To inspect the pipeline using the (installed) `targets` package, you need to run the full simulation pipeline.
-
-```r
-targets::tar_make()
-```  
-
-Inspect the simulation design.
-
-```r
-targets::tar_visnetwork(targets_only = TRUE)
-```
-![](vis/pipeline.png)
-
-Inspect the built pipeline graph.
-
-```r
-targets::tar_visnetwork()
-``` 
-
-Inspect a specific pipeline object.
-
-```r
-targets::tar_read(simulated_analyses)
-``` 
-
-Finally, if you're feeling playful, change the simulation parameters by modifying the `_targets.R` file which calls functions from `R/`.
-
-The `poc/poc.R` file is the original script where the simulation was prototyped from `poc/analytic_question.md`.
-
-## graph structure
-
-- nodes: 
-  - shaped by:
-    - source columns
-    - (transformations on source columns, not in first pass)
-    - outcome distributions
-  - sized by: number of analyses that used that variable
-  - (future: sizing/colouring by pooled significance and/or effect size, but unlikely to be easily extractable from this experiment)
-
-- edges connect nodes within an analysis, linetype by:
-  - **from source → to outcome** weighted by number of analyses that used that source column to derive outcome
-  - **between source columns** weighted by number of analyses that used both source columns
-  - (future extension possibility: source → transformation → outcome edges, but not in first pass)
-- we will explore fans, weight, or alpha in the visualisation for edge density
-
-## validation
-
-Open `validation/validate_graph.html` in your browser to inspect the validation report for the graph structure.
-
-## extensibility
-
-A final note, this simulation is readily extensible to other analytic questions by swapping out the dataset read and tweaking expected parameter objects in the pipeline. 
-
-## Eucalypt analysis
-
-Inspect the eucalypt data analysis
-
-```r
-tar_visnetwork(names = starts_with("emp"), targets_only = TRUE)
-```
+The simulation pipeline is modularised in [`R/simulation_factory_targets.R`](R/simulation_factory_targets.R) and can be enabled by uncommenting the relevant line in `_targets.R`.
