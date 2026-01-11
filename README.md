@@ -16,8 +16,10 @@ Inspect the eucalypt data analysis:
 
 ```r
 targets::tar_make()
-tar_visnetwork(names = starts_with("emp"), targets_only = TRUE)
+tar_visnetwork(names = contains("euc"), targets_only=TRUE)
 ```
+
+The bluetit is running over the same code, including it is busy to look at because every node is duplicated by the pipeline's logic.
 
 ## Graph Visualisations
 

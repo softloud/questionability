@@ -5,3 +5,5 @@ _targets/
 .quarto/
 *_files/
 *_cache/
+
+vis/pipeline_files
