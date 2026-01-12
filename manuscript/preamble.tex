@@ -1,0 +1,88 @@
+\documentclass[12pt]{article}
+
+% ============================================================================
+% DRAFT vs PUBLICATION MODE
+% ============================================================================
+% Uncomment ONE of the following lines:
+% \newcommand{\draftmode}{}     % DRAFT MODE: wide margins, todo notes visible
+% \newcommand{\pubmode}{}     % PUBLICATION MODE: narrow margins, todo notes hidden
+
+% Page layout - conditional on mode
+\ifdefined\draftmode
+  % DRAFT MODE: Wide margins for easy reading of todo notes
+  \usepackage[left=0.5in, right=4.5in, top=1in, bottom=1in, marginparwidth=4in, marginparsep=0.3in]{geometry}
+  \usepackage{setspace}
+  \onehalfspacing  % Less dense for easier review
+\else
+  % PUBLICATION MODE: Standard academic margins
+  \usepackage[margin=1in]{geometry}
+  \usepackage{setspace}
+  \doublespacing
+\fi
+
+% Fonts and encoding
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Math packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% Graphics and tables
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+
+% References and citations
+\usepackage[authoryear,round]{natbib}
+\usepackage{url}
+
+% Colors for todo notes (classy palette)
+\usepackage[dvipsnames]{xcolor}
+\definecolor{hannahcolor}{RGB}{106, 90, 205}  % Slate blue
+\definecolor{charlescolor}{RGB}{139, 69, 19}  % Saddle brown
+
+% Todo notes package - conditional on mode
+\ifdefined\draftmode
+  % DRAFT MODE: Show todo notes with enhanced visibility
+  \usepackage[colorinlistoftodos,prependcaption]{todonotes}
+  \newcommand{\hannah}[1]{\todo[color=hannahcolor!40,author=Hannah]{#1}}
+  \newcommand{\charles}[1]{\todo[color=charlescolor!40,author=Charles]{#1}}
+\else
+  % PUBLICATION MODE: Hide todo notes completely
+  \usepackage[disable]{todonotes}
+  \newcommand{\hannah}[1]{}  % Empty command - notes disappear
+  \newcommand{\charles}[1]{} % Empty command - notes disappear
+\fi
+
+% Line numbers - only in draft mode
+\usepackage{lineno}
+\ifdefined\draftmode
+  \linenumbers
+\fi
+
+% Section formatting
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\bfseries}{\thesubsection.}{0.5em}{}
+
+% Figure sizing commands for easy switching
+\ifdefined\draftmode
+  % DRAFT MODE: Figures sized for wide margins
+  \newcommand{\figwidth}{0.9\textwidth}
+  \newcommand{\smallfigwidth}{0.7\textwidth}
+\else
+  % PUBLICATION MODE: Standard figure sizing
+  \newcommand{\figwidth}{0.8\textwidth}
+  \newcommand{\smallfigwidth}{0.6\textwidth}
+\fi
+
+% Hyperlinks (load last)
+\usepackage[colorlinks=true,citecolor=blue,urlcolor=blue,linkcolor=black]{hyperref}
+
+% ORCID support
+% Simple ORCID link without requiring orcidx package
+\newcommand{\orcidlink}[1]{\href{https://orcid.org/#1}{\textcolor{blue}{ORCID: #1}}}
