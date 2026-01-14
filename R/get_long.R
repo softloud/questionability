@@ -1,7 +1,7 @@
 get_long <- function(wide_dat, column_index) {
   wide_dat %>%
   dplyr::select(
-    -estimate, -link_function_reported, -linear_model, -model_subclass) %>%
+    -analyst_id, -estimate, -link_function_reported, -linear_model, -model_subclass) %>%
     tidyr::pivot_longer(
       cols = -analysis_id, 
       names_to = "source_col",
