@@ -10,10 +10,21 @@ make draft     # Build only draft version
 make pub       # Build only publication version
 ```
 
-Or manually:
+The Makefile automatically handles the compilation with proper mode switching and bibliography processing.
+
+Or manually (note the multiple runs needed for proper bibliography processing):
 ```bash
-pdflatex -jobname=document-draft "\def\draftmode{}\input{document.tex}"    # For draft version
-pdflatex -jobname=document-pub "\def\pubmode{}\input{document.tex}"       # For publication version
+# For draft version
+pdflatex -jobname=document-draft "\def\draftmode{}\input{document.tex}"
+bibtex document-draft
+pdflatex -jobname=document-draft "\def\draftmode{}\input{document.tex}"
+pdflatex -jobname=document-draft "\def\draftmode{}\input{document.tex}"
+
+# For publication version  
+pdflatex -jobname=document-pub "\def\pubmode{}\input{document.tex}"
+bibtex document-pub
+pdflatex -jobname=document-pub "\def\pubmode{}\input{document.tex}"
+pdflatex -jobname=document-pub "\def\pubmode{}\input{document.tex}"
 ```
 
 Clean auxiliary files:
@@ -24,10 +35,10 @@ make clean
 ## Editing
 
 Edit content in `document.tex` - this single file is used to generate both versions.
-- Draft version: Wide margins, todo notes visible
-- Publication version: Standard margins, todo notes hidden
+- **Draft version**: Wide margins (4.5in right margin), todo notes visible, line numbers, single spacing
+- **Publication version**: Standard margins (1in all around), todo notes hidden, double spacing
 
-The preamble automatically handles the differences between draft and publication modes.
+The preamble automatically detects the mode based on compile-time flags (`\draftmode` or `\pubmode`) passed by the Makefile.
 
 ## Todo Notes
 
@@ -36,14 +47,13 @@ The preamble automatically handles the differences between draft and publication
 
 ## Preamble & Format Customization
 
-The manuscript uses conditional formatting with two main preamble files:
+The manuscript uses conditional formatting with a single preamble file:
 
-### Preamble Files
+### Preamble File
 
-- **`preamble.tex`** - Main preamble with complete configuration
-- **`preamble-base.tex`** - Alternative minimal preamble
+- **`preamble.tex`** - Main preamble with complete configuration that supports both draft and publication modes
 
-Both files support draft/publication mode switching and contain the same core structure:
+The preamble uses conditional statements to handle differences between modes:
 
 ### Key Customization Areas
 
