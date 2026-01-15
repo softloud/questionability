@@ -13,6 +13,7 @@ This project uses R's `{targets}` package to manage our analysis pipeline. You d
 - [`vis/`](vis/) - Generated plots and visualizations  
 - [`docs/`](docs/) - Additional documentation and project notes
 - [`validation/`](validation/) - Quality checks to ensure our analyses are working correctly
+- [`manuscript/`](manuscript/) - LaTeX manuscript files - see [manuscript/README.md](manuscript/README.md) for compilation instructions
 
 **To run the analyses:**
 ```r
