@@ -2,21 +2,21 @@
 
 ## all eucalyptus outcomes & source columns
 
-![](vis/emp_hairball.png)
+![](../vis/eucalyptus_hairball.png)
 
 ## expectation hairball
 
-![](vis/emp_hairball_expected.png)
+![](../vis/eucalyptus_hairball_expected.png)
 
 # source column counts
 
 ## slide
 
-![](vis/emp_barplot_35.png)
+![](../vis/eucalyptus_barplot_slide.png)
 
 ## manuscript
 
-![](vis/emp_barplot_15.png)
+![](../vis/eucalyptus_barplot.png)
 
 ## heatmap
 
