@@ -30,19 +30,19 @@ We expect analyses to have a shared conclusion (derived from modelling) using (m
 
 ### [Expectation](https://github.com/users/softloud/projects/18/views/10?sliceBy%5Bvalue%5D=storybook+mvp&pane=issue&itemId=148744929&issue=softloud%7Cquestionability%7C20)
 
-![](vis/emp_hairball_expected.png)
+![](../vis/eucalyptus_hairball_expected.png)
 
 ### [Reality](https://github.com/users/softloud/projects/18/views/10?sliceBy%5Bvalue%5D=storybook+mvp&pane=issue&itemId=148745175&issue=softloud%7Cquestionability%7C21)
 
 Results vary widely due to different definitions of **input** and **output**.
 
-![](vis/emp_hairball.png)
+![](../vis/eucalyptus_hairball.png)
 
 ## Input diversity
 
 ### [Popularity](https://github.com/users/softloud/projects/18/views/10?sliceBy%5Bvalue%5D=storybook+mvp&pane=issue&itemId=148745368&issue=softloud%7Cquestionability%7C24)
 
-![](vis/emp_barplot_35.png)
+![](../vis/eucalyptus_barplot_slide.png)
 
 ### [Heatmap clustering](https://github.com/users/softloud/projects/18/views/10?sliceBy%5Bvalue%5D=storybook+mvp&pane=issue&itemId=148769565&issue=softloud%7Cquestionability%7C27)
 
