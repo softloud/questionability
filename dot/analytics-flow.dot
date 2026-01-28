@@ -1,0 +1,79 @@
+
+# run this in dot/ terminal to write png
+# dot -Tpng -Gdpi=300 analytics-flow.dot -o ../vis/analytics-flow.png
+
+digraph flowchart {
+  rankdir=LR
+  node[shape=none]
+  edge [style=dotted]
+  # graph[style=invis]
+
+  subgraph cluster_reality {
+    label=<<B>reality</B>>
+
+    # nodes
+    subgraph cluster_model {
+      label=<<I>family</I>>
+      r_poisson [label="poisson model"]
+      r_binomial [label="binomial model"]
+      r_gaussian [label="gaussian model"]
+    }
+
+    subgraph cluster_link {
+      label=<<I>link function</I>>
+      r_loglink [label="log link function"]
+      r_identitylink [label="identity link function"]
+    }
+
+    subgraph cluster_subclass {
+      label=<<I>subclass</I>>
+      r_zeroinflated [label="zero-inflated"]
+    }
+
+    r_question [label="question"]
+    r_data [label="data"]
+    r_analysis [label="analysis"]
+    r_report [label="report"]
+    r_eda [label="exploratory data analysis"]
+
+
+    # arrows
+    r_data -> r_poisson -> r_loglink
+    r_question -> r_poisson
+    r_data -> r_binomial -> r_identitylink
+    r_question -> r_analysis
+    r_data -> r_gaussian
+    r_gaussian -> r_identitylink
+    r_poisson -> r_zeroinflated
+    r_zeroinflated -> r_analysis
+    r_identitylink -> r_analysis
+    r_question -> r_binomial
+    r_question -> r_gaussian
+    r_data -> r_eda -> r_analysis
+    r_question -> r_eda
+
+    r_analysis -> r_report
+    r_analysis -> r_data [style=dashed, label="validation"]
+    r_report -> r_analysis [style=dashed, label="feedback"]
+
+  }
+
+  subgraph cluster_expectation {
+    label=<<B>expectation</B>>
+
+    # nodes
+    e_question [label="question"]
+    e_data [label="data"]
+    e_analysis [label="analysis"]
+    e_report [label="report"]
+
+    # arrows
+    e_question -> e_analysis -> e_report
+    e_data -> e_analysis
+
+  }
+
+
+
+}
+
