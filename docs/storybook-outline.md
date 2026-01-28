@@ -24,6 +24,9 @@ question -> data -> *scientist* -> **analysis**
 
 We show the **analysis** of the data answering the question is dependent on *scientist*.
 
+![](../vis/analytics-flow.png)
+
+
 ## Expectation vs reality
 
 We expect analyses to have a shared conclusion (derived from modelling) using (mostly) agreed-upon evidence (derived from source columns).

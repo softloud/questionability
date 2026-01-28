@@ -1,3 +1,7 @@
+# flowchart
+
+![](../vis/analytics-flow.png)
+
 # hairballs
 
 ## all eucalyptus outcomes & source columns
