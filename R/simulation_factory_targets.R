@@ -13,7 +13,7 @@ get_simulation_factory_targets <- function() {
     # simulation parameters
     tar_target(
       name = data_bluetit,
-      readr::read_csv("data-many-analysts/blue_tit_data_updated_2020-04-18.csv")
+      readr::read_csv("source-data/blue_tit_data_updated_2020-04-18.csv")
     ),
     tar_target(
       name = sim_n_analyses,
