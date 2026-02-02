@@ -44,8 +44,8 @@ list(
     values = tibble::tibble(
       dataset = c("eucalyptus", "bluetit"),
       data_path = c(
-        "data-many-analysts/master_data_Charles_euc.csv",
-        "data-many-analysts/master_data_Charles_euc.csv"  # TODO: update when bluetit data added
+        "source-data/master_data_Charles_euc.csv",
+        "source-data/master_data_Charles_euc.csv"  # TODO: update when bluetit data added
       ),
       dataset_label = c("Eucalyptus", "Blue Tit")
     ),
