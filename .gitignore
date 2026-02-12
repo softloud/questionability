@@ -6,4 +6,6 @@ _targets/
 *_files/
 *_cache/
 
+# Python virtual environment
+.venv/
 vis/pipeline_files
