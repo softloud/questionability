@@ -1,0 +1,73 @@
+strict digraph {
+    rankdir=BT
+    edge [style=dotted]
+    node [shape=none]
+    style=dotted
+
+    subgraph cluster_source {
+        label=<<I>source</I>>
+        
+        euc__team__model
+        tit__team__model
+        euc__column
+        tit__column
+        
+    }
+    
+    subgraph cluster_semantic {
+        label=<<I>semantic</I>>
+        
+        source__team__model
+        model__column
+        
+    }
+    
+    subgraph cluster_analytic {
+        label=<<I>analytic</I>>
+        
+        ana___source__column [label=source__column]
+        ana___source__variable [label=source__variable]
+        
+        # count number of teams
+        ana___source__model [label=source__model]
+        ana___source__from_variable__to_variable [label=source__from_variable__to_variable]
+    }
+    
+    subgraph cluster_vis {
+        label=<<I>vis</I>>
+
+        histogram__source__team__model [label=histogram]
+        hairball__source__family__column [label=hairball]
+        barplot__model__column__team [label=barplot]
+        sankey__model__team [label=sankey]
+        heatmap__source__team__variable [label=heatmap]
+
+    }
+
+    euc__column -> model__column 
+    tit__column -> model__column
+    
+    euc__team__model -> source__team__model
+    tit__team__model -> source__team__model
+    source__team__model -> ana___source__model
+    
+    ana___source__model -> histogram__source__team__model
+    
+    model__column -> ana___source__column
+    source__team__model -> ana___source__column
+
+    ana___source__column -> barplot__model__column__team
+    ana___source__model -> sankey__model__team
+    ana___source__variable -> hairball__source__family__column
+    model__column -> ana___source__variable
+    source__team__model -> ana___source__variable
+    ana___source__variable -> heatmap__source__team__variable
+    euc__team__model -> model__column
+    tit__team__model -> model__column
+    ana___source__from_variable__to_variable -> hairball__source__family__column
+    model__column -> ana___source__from_variable__to_variable
+    source__team__model -> ana___source__from_variable__to_variable
+
+
+    
+}
