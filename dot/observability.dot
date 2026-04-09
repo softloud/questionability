@@ -7,10 +7,10 @@ strict digraph {
     subgraph cluster_source {
         label=<<I>source</I>>
         
-        eucalyptus__team__model
-        bluetit__team__model
-        eucalyptus__column
-        bluetit__column
+        euc__team__model
+        tit__team__model
+        euc__column
+        tit__column
         
     }
     
@@ -44,11 +44,11 @@ strict digraph {
 
     }
 
-    eucalyptus__column -> model__column 
-    bluetit__column -> model__column
+    euc__column -> model__column 
+    tit__column -> model__column
     
-    eucalyptus__team__model -> source__team__model
-    bluetit__team__model -> source__team__model
+    euc__team__model -> source__team__model
+    tit__team__model -> source__team__model
     source__team__model -> ana___source__model
     
     ana___source__model -> histogram__source__team__model
@@ -62,8 +62,8 @@ strict digraph {
     model__column -> ana___source__variable
     source__team__model -> ana___source__variable
     ana___source__variable -> heatmap__source__team__variable
-    eucalyptus__team__model -> model__column
-    bluetit__team__model -> model__column
+    euc__team__model -> model__column
+    tit__team__model -> model__column
     ana___source__from_variable__to_variable -> hairball__source__family__column
     model__column -> ana___source__from_variable__to_variable
     source__team__model -> ana___source__from_variable__to_variable
