@@ -8,4 +8,14 @@ _targets/
 
 # Python virtual environment
 .venv/
+__pycache__/
+*.pyc
 vis/pipeline_files
+
+# config
+.env
+dbt/profiles.yml
+
+# dbt 
+dbt/target/
+dbt/logs/

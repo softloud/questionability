@@ -1,0 +1,14 @@
+[project]
+name = "questionability"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dagster-dbt>=0.28.21",
+    "dagster-webserver>=1.12.21",
+    "dbt-postgres>=1.10.0",
+]
+
+[tool.dagster]
+module_name = "dagster_qn"
