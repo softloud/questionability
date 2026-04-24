@@ -1,38 +1,40 @@
 # Using uv for Python Environment Management
 
-This project uses [uv](https://github.com/astral-sh/uv) for fast Python package management.
+This project uses [uv](https://github.com/astral-sh/uv) for Python package management, with dependencies declared in `pyproject.toml`.
 
 ## Getting Started
 
-1. **Set up a virtual environment** (if not already done):
-   ```bash
-   python -m venv .venv
-   source .venv/bin/activate
-   ```
-
-2. **Install uv** (if not already installed):
+1. **Install uv** (if not already installed):
    ```bash
    pipx install uv
    # or
-   pip install uv
+   curl -LsSf https://astral.sh/uv/install.sh | sh
    ```
 
-3. **Install dependencies**:
+2. **Create a virtual environment and install dependencies**:
    ```bash
-   uv pip install -r requirements.txt
+   uv sync
    ```
+   This reads `pyproject.toml` and `uv.lock` and sets up `.venv/` automatically.
 
-4. **Add new packages**:
+3. **Run commands in the environment**:
    ```bash
-   uv pip install <package-name>
-   uv pip freeze > requirements.txt
+   uv run <command>
+   # e.g.
+   uv run dagster dev -m dagster_qn
    ```
+   Or activate the venv manually: `source .venv/bin/activate`
 
-5. **Sync environment** (to match requirements.txt):
-   ```bash
-   uv pip sync requirements.txt
-   ```
+## Adding New Packages
+
+```bash
+uv add <package-name>
+```
+
+This updates `pyproject.toml` and `uv.lock`. Commit both files.
 
 ## Notes
-- Always activate your virtual environment before running uv commands.
-- Do not commit the `.venv/` directory to version control.
+- Do not commit `.venv/` — it is gitignored.
+- `uv.lock` should be committed so all collaborators get identical environments.
+- `requirements.txt` is kept for reference but `pyproject.toml` is the source of truth.
+

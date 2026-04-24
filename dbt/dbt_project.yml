@@ -1,0 +1,35 @@
+name: qn_project
+version: "1.0.0"
+config-version: 2
+
+profile: qn_project
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+seeds:
+  qn_project:
+    +schema: seeds
+
+models:
+  qn_project:
+    source_base: 
+      +materialized: ephemeral
+      +schema: source_base
+    source_entities:
+      +materialized: view
+      +schema: source_entities
+    semantic:
+      +materialized: ephemeral
+    analytic:
+      +materialized: table
+      +schema: analytic
