@@ -6,3 +6,24 @@ seeds:
 
   - name: euc_model
     description: Eucalyptus study source data.
+
+  - name: euc_team_model
+    description: Eucalyptus team/model metadata.
+
+  - name: euc_team
+    description: Eucalyptus team metadata.
+
+  - name: euc_column
+    description: Eucalyptus column metadata.
+
+  - name: tit_team_model
+    description: Blue tit team/model metadata.
+
+  - name: tit_team
+    description: Blue tit team metadata.
+
+  - name: tit_column
+    description: Blue tit column metadata.
+
+  - name: conclusions
+    description: Conclusions from all teams and models.
