@@ -1,2 +1,2 @@
 select *
-from {{ ref('euc_model') }}
+from {{ ref('euc_team_model') }}

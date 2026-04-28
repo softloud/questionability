@@ -14,7 +14,6 @@ vis/pipeline_files
 
 # config
 .env
-dbt/profiles.yml
 
 # dbt 
 dbt/target/
