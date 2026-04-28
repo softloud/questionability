@@ -6,36 +6,57 @@ Data entities are tables as rows and columns at different transformational layer
 - **Entities**: Processed data tables that join or transform source entities in similar ways.
 - **Source entities**: Organised in the way they arrived by source.
 
-## analytic entities
+## raw
 
-source | columns that define a unique row | `targets` command
+### data sources
+
+Raw input files in [`source-data/`](../source-data/) — this is the canonical location. Do not edit files in `dbt/seeds/` directly; they are managed by `sync_seeds.sh`.
+
+source | file | grain (unique row)
 --- | --- | ---
-eucalyptus | team, model | `tar_read(analyses_eucalyptus)`
-eucalyptus | team | `tar_read(analysts_eucalyptus)`
-eucalyptus | source column, model | `tar_read(analyses_sourcecols_eucalyptus)`
-bluetit | team, model | `tar_read(analyses_bluetit)`
-bluetit | team | `tar_read(analysts_bluetit)`
-bluetit | source column, model | `tar_read(analyses_sourcecols_bluetit)`
-
-## entities
-
-In this pipeline, we currently do not have any analyses aggregating across the two datasets, but likely there will be in future. 
-
-The wrangled entities are still decomposed by source in the pipeline.
-
-source | columns that define a unique row | `targets` command
---- | --- | ---
-eucalyptus | source column | `tar_read(column_index_eucalyptus)`
-bluetit | source column | `tar_read(column_index_bluetit)`
-
-## source entities
-
-We will work with several raw datasets for both `eucalypt` and `bluetit` analyses. Raw data lives in [`source-data/`](../source-data/) — this is the canonical location. Do not edit files in `dbt/seeds/` directly; they are managed by `sync_seeds.sh`.
-
-source | columns that define a unique row | `source-data` file
---- | --- | ---
-eucalyptus | team, model | `source-data/master_data_Charles_euc.csv`
-bluetit | team, model | `source-data/blue_tit_data_updated_2020-04-18.csv`
+eucalyptus | `source-data/master_data_Charles_euc.csv` | team, model
+eucalyptus | `source-data/euc_team_model.csv` | team, model
+eucalyptus | `source-data/euc_team.csv` | team
+eucalyptus | `source-data/euc_column.csv` | column
+bluetit | `source-data/blue_tit_data_updated_2020-04-18.csv` | team, model
+bluetit | `source-data/tit_team_model.csv` | team, model
+bluetit | `source-data/tit_team.csv` | team
+bluetit | `source-data/tit_column.csv` | column
 
 See [README.md — Adding new datasets](../README.md#adding-new-datasets) for how to add new source files.
+
+## analytic
+
+### analytic entities
+
+Visualisation-ready datasets
+
+Produced by Dagster assets and written to `data/`. Each dataset combines both sources via a `source` column.
+
+`data/` file | grain (unique row)
+--- | ---
+`data/source_model.csv` | source, team, model
+`data/source_column.csv` | source, column, model
+`data/source_variable.csv` | source, family, column
+`data/source_variable_edges.csv` | source, from_variable, to_variable
+
+### entities
+
+Semantic-layer dbt models combining the two source datasets.
+
+dbt model | grain (unique row)
+--- | ---
+`source__team__model` | source, team, model
+`model__column` | model, column
+
+### source entities
+
+dbt seed tables loaded from `source-data/` via `sync_seeds.sh`, corresponding to the source layer in the pipeline.
+
+source | dbt seed | grain (unique row)
+--- | --- | ---
+eucalyptus | `euc__team__model` | team, model
+eucalyptus | `euc__column` | column
+bluetit | `tit__team__model` | team, model
+bluetit | `tit__column` | column
 
