@@ -1,3 +1,4 @@
+# Canonical location of dbt profiles: ~/.dbt/profiles.yml (system-wide default)
 name: qn_project
 version: "1.0.0"
 config-version: 2
