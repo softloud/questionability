@@ -1,0 +1,51 @@
+version: 2
+
+models:
+
+  - name: se_euc__team__model
+    description: Eucalyptus study source data.
+    columns:
+      - name: model_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: se_tit__team__model
+    description: Blue tit study source data.
+    columns:
+      - name: model_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: se_euc__column
+    description: Eucalyptus study column metadata.
+    columns:
+      - name: column_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: se_tit__column
+    description: Blue tit study column metadata.
+    columns:
+      - name: column_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: se_euc__team
+    description: Eucalyptus study team metadata.
+    columns:
+      - name: team_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: se_tit__team
+    description: Blue tit study team metadata.
+    columns:
+      - name: team_id
+        data_tests:
+          - unique
+          - not_null
