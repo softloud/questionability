@@ -20,7 +20,6 @@ eucalyptus | `source-data/euc_column.csv` | column
 bluetit | `source-data/tit_team_model.csv` | team, model
 bluetit | `source-data/tit_team.csv` | team
 bluetit | `source-data/tit_column.csv` | column
-other | `source-data/conclusions.csv` | team, model, conclusion
 
 See [README.md — Adding new datasets](../README.md#adding-new-datasets) for how to add new source files.
 
