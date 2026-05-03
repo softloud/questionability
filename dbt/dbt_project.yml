@@ -22,9 +22,6 @@ seeds:
 
 models:
   qn_project:
-    source_base: 
-      +materialized: ephemeral
-      +schema: source_base
     source_entities:
       +materialized: view
       +schema: source_entities
@@ -33,3 +30,7 @@ models:
     analytic:
       +materialized: table
       +schema: analytic
+    dbt_artifacts:
+      +materialized: table
+      +schema: artifacts
+

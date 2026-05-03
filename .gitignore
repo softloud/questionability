@@ -18,3 +18,7 @@ vis/pipeline_files
 # dbt 
 dbt/target/
 dbt/logs/
+dbt/dbt_packages/
+dbt/package-lock.yml
+logs/
+dbt/profiles.yml
