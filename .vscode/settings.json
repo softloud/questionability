@@ -1,12 +1,3 @@
 {
-    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
-    "sqltools.connections": [
-        {
-            "name": "DuckDB",
-            "accessMode": "Read Only",
-            "previewLimit": 50,
-            "driver": "DuckDB"
-        }
-    ],
-    "sqltools.useNodeRuntime": true
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python"
 }
