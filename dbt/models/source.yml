@@ -24,6 +24,3 @@ seeds:
 
   - name: tit_column
     description: Blue tit column metadata.
-
-  - name: conclusions
-    description: Conclusions from all teams and models.
