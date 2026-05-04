@@ -5,4 +5,4 @@ db:
 
 dagster: ## Start Dagster UI
 	@echo "🎯 Starting Dagster UI..."
-	@DAGSTER_HOME=$(PWD)/dagster_qn/dagsterdat uv run dagster dev -m dagster_qn
+	@bash -c "source .env && uv run dagster dev -m dagster_qn"
