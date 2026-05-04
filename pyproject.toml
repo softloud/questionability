@@ -7,7 +7,7 @@ requires-python = ">=3.12"
 dependencies = [
     "dagster-dbt>=0.28.21",
     "dagster-webserver>=1.12.21",
-    "dbt-postgres>=1.10.0",
+    "dbt-duckdb>=1.10.1",
 ]
 
 [tool.dagster]
