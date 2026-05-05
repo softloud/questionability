@@ -1,0 +1,45 @@
+version: 2
+
+models: 
+
+  - name: sem_source__team
+    data_tests:
+      - unique:
+          column_name: "team_id || '-' || source_id"
+    columns:
+      - name: team_id
+        data_tests:
+          - not_null
+      - name: source_id
+        data_tests:
+          - not_null
+  
+  - name: sem_source__model__column
+    data_tests:
+      - unique:
+          column_name: "source_id || '-' || model_id || '-' || column_id"
+    columns:
+      - name: source_id
+        data_tests:
+          - not_null
+      - name: model_id
+        data_tests:
+          - not_null
+      - name: column_id
+        data_tests:
+          - not_null
+
+  - name: sem_team__model
+    data_tests: 
+      - unique:
+          column_name: "team_id || '-' || model_id"
+    columns:
+      - name: source_id
+        data_tests:
+          - not_null
+      - name: team_id
+        data_tests:
+          - not_null
+      - name: model_id
+        data_tests:
+          - not_null
