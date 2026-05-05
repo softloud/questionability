@@ -2,6 +2,8 @@
 
 This project explores analyses of how different analysts might decompose a domain question into an analytic question given the same data.
 
+![](figures/analytics-flow.png)
+
 ## Structure of this Project
 
 **Key files and folders:**
@@ -14,6 +16,10 @@ This project explores analyses of how different analysts might decompose a domai
 - [`docs/`](docs/) - Documentation
 - [`validation/`](validation/) - Quality checks
 - [`manuscript/`](manuscript/) - LaTeX manuscript — see [manuscript/README.md](manuscript/README.md)
+
+## Data wrangling pipeline
+
+![](figures/observability.png)
 
 ## For R Contributors
 
