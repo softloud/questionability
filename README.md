@@ -5,7 +5,8 @@ This project explores analyses of how different analysts might decompose a domai
 ## Structure of this Project
 
 **Key files and folders:**
-- [`R/`](R/) - R analysis scripts
+- ['analysis-scripts`](analysis-scripts/) - Standalone analysis scripts -- see [analaysis-scripts/README.md](analysis-scripts/README.md)
+- [`R/`](R/) - R function scripts
 - [`source-data/`](source-data/) - Primary source of truth for raw datasets
 - [`dbt/`](dbt/) - Data transformation (seeds, models)
 - [`dagster_qn/`](dagster_qn/) - Dagster orchestration

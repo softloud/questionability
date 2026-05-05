@@ -9,7 +9,9 @@ Load colour palettes via `source(vis-scripts/colour-palettes.R)`
 
 # document the vis script here
 
-analysis filename in analysis-scripts | description
----|--------
+filename format: `<short version of question>--<visualisation type>`
 
+filename(.R) | question
+---|--------
+conclusions--treemap | What proportion of teams chose which conclusion categories by source?
 
