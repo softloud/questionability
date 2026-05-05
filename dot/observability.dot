@@ -1,5 +1,5 @@
 strict digraph {
-    rankdir=BT
+    rankdir=LR
     edge [style=dotted]
     node [shape=none]
     style=dotted
