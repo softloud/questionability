@@ -1,0 +1,54 @@
+version: 2
+
+models:
+
+  - name: ana_source__model
+    data_tests:
+      - unique:
+          column_name: "source_id || '-' || model_id"
+    columns:
+      - name: source_id
+        data_tests:
+          - not_null
+      - name: model_id
+        data_tests:
+          - not_null
+  
+  - name: ana_source__column
+    data_tests:
+      - unique:
+          column_name: "source_id || '-' || column_id"
+    columns:
+      - name: source_id
+        data_tests:
+          - not_null
+      - name: column_id
+        data_tests:
+          - not_null
+  
+  - name: ana_source__from_variable__to_variable
+    data_tests:
+      - unique:
+          column_name: "source_id || '-' || from_variable_id || '-' || to_variable_id"
+    columns:
+      - name: source_id
+        data_tests:
+          - not_null
+      - name: from_variable_id
+        data_tests:
+          - not_null
+      - name: to_variable_id
+        data_tests:
+          - not_null
+  
+  - name: ana_source__variable
+    data_tests:
+      - unique:
+          column_name: "source_id || '-' || variable_id"
+    columns:
+      - name: source_id
+        data_tests:
+          - not_null
+      - name: variable_id
+        data_tests:
+          - not_null
