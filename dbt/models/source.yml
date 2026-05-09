@@ -1,12 +1,6 @@
 version: 2
 
 seeds:
-  - name: tit_model
-    description: Blue tit study source data.
-
-  - name: euc_model
-    description: Eucalyptus study source data.
-
   - name: euc_team_model
     description: Eucalyptus team/model metadata.
 
