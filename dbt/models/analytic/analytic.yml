@@ -52,3 +52,15 @@ models:
       - name: variable_id
         data_tests:
           - not_null
+  
+  - name: ana_source__team
+    data_tests:
+      - unique:
+          column_name: "source_id || '-' || team_id"
+    columns:
+      - name: source_id
+        data_tests:
+          - not_null
+      - name: team_id
+        data_tests:
+          - not_null
