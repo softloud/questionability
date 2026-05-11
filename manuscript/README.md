@@ -32,6 +32,35 @@ Clean auxiliary files:
 make clean
 ```
 
+## Windows
+
+### Option 1: WSL or Git Bash (recommended)
+
+If you have [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) or Git Bash installed, the same `make` commands above work unchanged.
+
+### Option 2: PowerShell (manual)
+
+With [MiKTeX](https://miktex.org/) or [TeX Live](https://tug.org/texlive/) installed, run the `pdflatex`/`bibtex` steps directly:
+
+```powershell
+# For draft version
+pdflatex -jobname=document-draft "\def\draftmode{}\input{document.tex}"
+bibtex document-draft
+pdflatex -jobname=document-draft "\def\draftmode{}\input{document.tex}"
+pdflatex -jobname=document-draft "\def\draftmode{}\input{document.tex}"
+
+# For publication version
+pdflatex -jobname=document-pub "\def\pubmode{}\input{document.tex}"
+bibtex document-pub
+pdflatex -jobname=document-pub "\def\pubmode{}\input{document.tex}"
+pdflatex -jobname=document-pub "\def\pubmode{}\input{document.tex}"
+```
+
+Clean auxiliary files:
+```powershell
+Remove-Item -ErrorAction SilentlyContinue *.aux, *.bbl, *.blg, *.log, *.out, *.synctex.gz, *.fls, *.fdb_latexmk, *.toc, *.lof, *.lot, document-draft.pdf, document-pub.pdf, document.pdf
+```
+
 ## Editing
 
 Edit content in `document.tex` - this single file is used to generate both versions.
