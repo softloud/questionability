@@ -21,6 +21,8 @@ bluetit | `source-data/tit_team_model.csv` | team, model
 bluetit | `source-data/tit_team.csv` | team
 bluetit | `source-data/tit_column.csv` | column
 
+For euc_team_model data source file, drop rows where all columns are listed as NAs. These rows correspond to models that did not answer the designated research question. 
+
 See [README.md — Adding new datasets](../README.md#adding-new-datasets) for how to add new source files.
 
 ## analytic
