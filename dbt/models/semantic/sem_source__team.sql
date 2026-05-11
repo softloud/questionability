@@ -11,6 +11,11 @@ tit as (
     team_id,
     conclusion_category
   from {{ ref('se_tit__team') }}
+),
+unioned as (
+  select * from euc
+  union all
+  select * from tit
 )
 select *
-from euc
+from unioned

@@ -1,68 +1,145 @@
-source_id,team_id,conclusion_category
-euc,Bombala,neg_c
-euc,Candelo,neg_q
-euc,Aberdeen,none_c
-euc,Arkarool,none_c
-euc,Batchelo,none_q
-euc,Boydtown,neg_q
-euc,Capertee,neg_q
-euc,Cervante,none_q
-euc,Birdwoo,none_q
-euc,Blayney,neg_c
-euc,Balaklav,neg_q
-euc,Bermagui,mixed
-euc,Berrigan,neg_c
-euc,Binalong,neg_q
-euc,Binnaway,neg_q
-euc,Booligal,neg_q
-euc,Brighton,none_c
-euc,Buckland,none_q
-euc,Carrieto,NA
-euc,Cassilis,pos_q
-euc,Cessnock,none_c
-euc,Bodalla,none_q
-euc,Boorowa,neg_c
-euc,Brookto,none_c
-euc,Branxton,NA
-euc,Bundarra,none_c
-euc,Chiltern,none_q
-euc,Birchip,neg_c
-euc,Broulee,mixed
-euc,Buderim,NA
-euc,Carnama,mixed
-euc,Byrock,neg_q
-euc,Bangalow,none_q
-euc,Barellan,none_c
-euc,Beaufort,none_q
-euc,Belgrave,neg_q
-euc,Boggabri,none_c
-euc,Bothwell,none_q
-euc,Carnarvo,none_c
-euc,Bicheno,neg_q
-euc,Bingara,neg_c
-euc,Anglesea,neg_q
-euc,Armidale,pos_q
-euc,Atherton,mixed
-euc,Bathurst,none_c
-euc,Calliope,neg_q
-euc,Chewton,pos_c
-euc,Ardrossa,none_c
-euc,Cardwell,none_c
-euc,Childers,mixed
-euc,Biloela,pos_q
-euc,Bonalbo,mixed
-euc,Bruthen,NA
-euc,Andamook,none_c
-euc,Balmoral,none_c
-euc,Beachpor,none_c
-euc,Bencubbi,none_c
-euc,Blackall,mixed
-euc,Bridport,mixed
-euc,Canberra,none_c
-euc,Carcoar,none_c
-euc,Ballarat,pos_q
-euc,Brooklyn,neg_q
-euc,Bundeena,neg_c
-euc,Bungonia,none_c
-euc,Busselto,mixed
-euc,Charlton,none_q
+source_id,team_id,conclusion_category,conclusion_direction,source_label
+tit,Ayr,neg_q,negative,bluetit (teams = 77)
+tit,Bega,neg_q,negative,bluetit (teams = 77)
+tit,Bell,neg_c,negative,bluetit (teams = 77)
+tit,Berr,neg_q,negative,bluetit (teams = 77)
+tit,Brim,neg_c,negative,bluetit (teams = 77)
+tit,Bruc,neg_q,negative,bluetit (teams = 77)
+tit,Burr,neg_c,negative,bluetit (teams = 77)
+tit,Byng,neg_c,negative,bluetit (teams = 77)
+tit,Cape,NA,missing,bluetit (teams = 77)
+tit,Clar,neg_c,negative,bluetit (teams = 77)
+tit,Clev,neg_q,negative,bluetit (teams = 77)
+tit,Alban,neg_c,negative,bluetit (teams = 77)
+tit,Alpha,none_c,none,bluetit (teams = 77)
+tit,Appin,none_c,none,bluetit (teams = 77)
+tit,Aubur,neg_q,negative,bluetit (teams = 77)
+tit,Avoca,neg_q,negative,bluetit (teams = 77)
+tit,Bargo,neg_c,negative,bluetit (teams = 77)
+tit,Berry,neg_c,negative,bluetit (teams = 77)
+tit,Binda,mixed,mixed,bluetit (teams = 77)
+tit,Borde,neg_q,negative,bluetit (teams = 77)
+tit,Bowen,neg_q,negative,bluetit (teams = 77)
+tit,Bulli,neg_q,negative,bluetit (teams = 77)
+tit,Cedun,neg_c,negative,bluetit (teams = 77)
+tit,Albury,neg_c,negative,bluetit (teams = 77)
+tit,Aldgat,mixed,mixed,bluetit (teams = 77)
+tit,Alding,neg_c,negative,bluetit (teams = 77)
+tit,Allora,neg_c,negative,bluetit (teams = 77)
+tit,Anakie,NA,missing,bluetit (teams = 77)
+tit,Aramac,neg_q,negative,bluetit (teams = 77)
+tit,Ararat,neg_c,negative,bluetit (teams = 77)
+tit,August,neg_c,negative,bluetit (teams = 77)
+tit,Avenel,neg_q,negative,bluetit (teams = 77)
+tit,Bamaga,neg_q,negative,bluetit (teams = 77)
+tit,Barmah,neg_q,negative,bluetit (teams = 77)
+tit,Barmer,neg_q,negative,bluetit (teams = 77)
+tit,Batlow,neg_q,negative,bluetit (teams = 77)
+tit,Baxter,neg_c,negative,bluetit (teams = 77)
+tit,Beltan,neg_c,negative,bluetit (teams = 77)
+tit,Bethan,neg_q,negative,bluetit (teams = 77)
+tit,Beulah,neg_c,negative,bluetit (teams = 77)
+tit,Bilpin,neg_c,negative,bluetit (teams = 77)
+tit,Bindoo,neg_q,negative,bluetit (teams = 77)
+tit,Blinma,neg_q,negative,bluetit (teams = 77)
+tit,Boonah,neg_c,negative,bluetit (teams = 77)
+tit,Boulia,neg_c,negative,bluetit (teams = 77)
+tit,Bourke,neg_c,negative,bluetit (teams = 77)
+tit,Bowral,mixed,mixed,bluetit (teams = 77)
+tit,Bright,neg_q,negative,bluetit (teams = 77)
+tit,Buchan,neg_q,negative,bluetit (teams = 77)
+tit,Bunbur,none_q,none,bluetit (teams = 77)
+tit,Burnie,neg_q,negative,bluetit (teams = 77)
+tit,Byrock,neg_c,negative,bluetit (teams = 77)
+tit,Caigun,mixed,mixed,bluetit (teams = 77)
+tit,Cairns,neg_q,negative,bluetit (teams = 77)
+tit,Camden,none_c,none,bluetit (teams = 77)
+tit,Casino,NA,missing,bluetit (teams = 77)
+tit,Cattai,neg_c,negative,bluetit (teams = 77)
+tit,Adelong,mixed,mixed,bluetit (teams = 77)
+tit,Angasto,neg_q,negative,bluetit (teams = 77)
+tit,Antwerp,neg_q,negative,bluetit (teams = 77)
+tit,Araluen,neg_q,negative,bluetit (teams = 77)
+tit,Arltung,neg_c,negative,bluetit (teams = 77)
+tit,Armadal,neg_q,negative,bluetit (teams = 77)
+tit,Ashford,neg_c,negative,bluetit (teams = 77)
+tit,Babinda,mixed,mixed,bluetit (teams = 77)
+tit,Balingu,neg_q,negative,bluetit (teams = 77)
+tit,Ballina,neg_c,negative,bluetit (teams = 77)
+tit,Bargara,neg_c,negative,bluetit (teams = 77)
+tit,Barooga,neg_q,negative,bluetit (teams = 77)
+tit,Barraba,neg_q,negative,bluetit (teams = 77)
+tit,Belmont,neg_c,negative,bluetit (teams = 77)
+tit,Bemboka,neg_c,negative,bluetit (teams = 77)
+tit,Benalla,neg_c,negative,bluetit (teams = 77)
+tit,Bendigo,neg_c,negative,bluetit (teams = 77)
+tit,Berrima,neg_c,negative,bluetit (teams = 77)
+tit,Berwick,neg_q,negative,bluetit (teams = 77)
+tit,Beverle,neg_q,negative,bluetit (teams = 77)
+euc,Birchip,neg_c,negative,eucalpytus (teams = 67)
+euc,Broulee,mixed,mixed,eucalpytus (teams = 67)
+euc,Buderim,NA,missing,eucalpytus (teams = 67)
+euc,Carnama,mixed,mixed,eucalpytus (teams = 67)
+euc,Byrock,neg_q,negative,eucalpytus (teams = 67)
+euc,Bangalow,none_q,none,eucalpytus (teams = 67)
+euc,Barellan,none_c,none,eucalpytus (teams = 67)
+euc,Beaufort,none_q,none,eucalpytus (teams = 67)
+euc,Belgrave,neg_q,negative,eucalpytus (teams = 67)
+euc,Boggabri,none_c,none,eucalpytus (teams = 67)
+euc,Bothwell,none_q,none,eucalpytus (teams = 67)
+euc,Carnarvo,none_c,none,eucalpytus (teams = 67)
+euc,Bodalla,none_q,none,eucalpytus (teams = 67)
+euc,Boorowa,neg_c,negative,eucalpytus (teams = 67)
+euc,Brookto,none_c,none,eucalpytus (teams = 67)
+euc,Branxton,NA,missing,eucalpytus (teams = 67)
+euc,Bundarra,none_c,none,eucalpytus (teams = 67)
+euc,Chiltern,none_q,none,eucalpytus (teams = 67)
+euc,Birdwoo,none_q,none,eucalpytus (teams = 67)
+euc,Blayney,neg_c,negative,eucalpytus (teams = 67)
+euc,Balaklav,neg_q,negative,eucalpytus (teams = 67)
+euc,Bermagui,mixed,mixed,eucalpytus (teams = 67)
+euc,Berrigan,neg_c,negative,eucalpytus (teams = 67)
+euc,Binalong,neg_q,negative,eucalpytus (teams = 67)
+euc,Binnaway,neg_q,negative,eucalpytus (teams = 67)
+euc,Booligal,neg_q,negative,eucalpytus (teams = 67)
+euc,Brighton,none_c,none,eucalpytus (teams = 67)
+euc,Buckland,none_q,none,eucalpytus (teams = 67)
+euc,Carrieto,NA,missing,eucalpytus (teams = 67)
+euc,Cassilis,pos_q,positive,eucalpytus (teams = 67)
+euc,Cessnock,none_c,none,eucalpytus (teams = 67)
+euc,Carcoar,none_c,none,eucalpytus (teams = 67)
+euc,Ballarat,pos_q,positive,eucalpytus (teams = 67)
+euc,Brooklyn,neg_q,negative,eucalpytus (teams = 67)
+euc,Bundeena,neg_c,negative,eucalpytus (teams = 67)
+euc,Bungonia,none_c,none,eucalpytus (teams = 67)
+euc,Busselto,mixed,mixed,eucalpytus (teams = 67)
+euc,Charlton,none_q,none,eucalpytus (teams = 67)
+euc,Chewton,pos_c,positive,eucalpytus (teams = 67)
+euc,Ardrossa,none_c,none,eucalpytus (teams = 67)
+euc,Cardwell,none_c,none,eucalpytus (teams = 67)
+euc,Childers,mixed,mixed,eucalpytus (teams = 67)
+euc,Bombala,neg_c,negative,eucalpytus (teams = 67)
+euc,Candelo,neg_q,negative,eucalpytus (teams = 67)
+euc,Aberdeen,none_c,none,eucalpytus (teams = 67)
+euc,Arkarool,none_c,none,eucalpytus (teams = 67)
+euc,Batchelo,none_q,none,eucalpytus (teams = 67)
+euc,Boydtown,neg_q,negative,eucalpytus (teams = 67)
+euc,Capertee,neg_q,negative,eucalpytus (teams = 67)
+euc,Cervante,none_q,none,eucalpytus (teams = 67)
+euc,Biloela,pos_q,positive,eucalpytus (teams = 67)
+euc,Bonalbo,mixed,mixed,eucalpytus (teams = 67)
+euc,Bruthen,NA,missing,eucalpytus (teams = 67)
+euc,Andamook,none_c,none,eucalpytus (teams = 67)
+euc,Balmoral,none_c,none,eucalpytus (teams = 67)
+euc,Beachpor,none_c,none,eucalpytus (teams = 67)
+euc,Bencubbi,none_c,none,eucalpytus (teams = 67)
+euc,Blackall,mixed,mixed,eucalpytus (teams = 67)
+euc,Bridport,mixed,mixed,eucalpytus (teams = 67)
+euc,Canberra,none_c,none,eucalpytus (teams = 67)
+euc,Bicheno,neg_q,negative,eucalpytus (teams = 67)
+euc,Bingara,neg_c,negative,eucalpytus (teams = 67)
+euc,Anglesea,neg_q,negative,eucalpytus (teams = 67)
+euc,Armidale,pos_q,positive,eucalpytus (teams = 67)
+euc,Atherton,mixed,mixed,eucalpytus (teams = 67)
+euc,Bathurst,none_c,none,eucalpytus (teams = 67)
+euc,Calliope,neg_q,negative,eucalpytus (teams = 67)
