@@ -5,7 +5,7 @@
 
 # colour palette
 
-Load colour palettes via `source(vis-scripts/colour-palettes.R)`
+Load colour palettes via `source(analysis-scripts/colour-palettes.R)`
 
 # document the vis script here
 

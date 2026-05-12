@@ -4,14 +4,8 @@ library(treemapify)
 # Load the data
 data <- read_csv("data/source__team.csv")
 
-# create conclusions colour palette
-conclusion_palette <- c(
-  "negative" = "#d73027",
-  "positive" = "#1a9850",
-  "mixed" = "#fee08b",
-  "none" = "#91bfdb",
-  "missing" = "#cccccc"
-)
+# load conclusions palette
+source("analysis-scripts/colour-palettes.R")
 
 # treemap
 data %>%
