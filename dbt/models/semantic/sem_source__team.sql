@@ -16,6 +16,15 @@ unioned as (
   select * from euc
   union all
   select * from tit
+),
+category_label as (
+  select *
+  from {{ ref("se_conclusions") }}
 )
-select *
+select 
+  unioned.*,
+  conclusions.conclusion_category_label
 from unioned
+left join
+category_label as conclusions
+  on unioned.conclusion_category = conclusions.conclusion_category
