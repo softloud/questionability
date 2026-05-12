@@ -33,7 +33,7 @@ Result: ""Regarding the first question, whether tree regeneration is happening, 
 
 ""The second question that is address is what factors drives eucalyptus tree regeneration.""
 
-Result: ""With respect to the second question, concerning what is driving the difference in tree regeneration, we found that all our selected explanatory variables were very likely (P[effect>0] at least 93.1%) to decrease seedling mean occurrences in magnitudes ranging between 6 and 21 %.""",NA
+Result: ""With respect to the second question, concerning what is driving the difference in tree regeneration, we found that all our selected explanatory variables were very likely (P[effect>0] at least 93.1%) to decrease seedling mean occurrences in magnitudes ranging between 6 and 21 %.""",neg_c
 Candelo,"Grass cover in general might have a mild negative effect on eucalypt seedling establishment, yet support for this hypothesis is weak.",neg_q
 Carcoar,"After fitting a final model including this nuisance variable along with our parameters of interest, annual and perennial grass cover, we did not find evidence for strong effects of annual or perennial grass cover on eucalyptus seedling aggregate height",none_c
 Carnama,"Cover of exotic perennial grass only influences seedling persistence, with no effects of grass cover on seedling recruitment.",mixed
@@ -51,7 +51,6 @@ Balaklav,"Native grass cover reduces eucalyptus seedling recruitment - potential
 This relationship is mediated by a negative feedback look: distance from existing eucalyptus canopy cover reduces litter cover, which promotes grass growth, suppressing eucalyptus recruitment.",neg_q
 Ballarat,Exotic grass cover (both of perennial and annual grasses) had a small positive association with the number of Eucalyptus spp. plants below 50cm - using this as a proxy for Eucalyptus spp. seedling recruitment seems valid and therefore exotic grass cover has a weak positive effect on recruitment. There was no evidence that native perennial grass cover influenced Eucalyptus spp. seedling recruitment.,pos_q
 Balmoral,Grass cover does not appear to influence Eucalyptus seedling recruitment.,none_c
-Bangalow,"Generally, grass cover did not significantly influence the Eucalyptus spp. seedling recruitment",none_q
 Bangalow,"Generally, grass cover did not significantly influence the Eucalyptus spp. seedling recruitment, with the exception that native perennial grass cover did significantly effect the number of seedlings between 50cm and 2 metres.",none_q
 Barellan,"I did not detect an effect of grass cover or any type of plant cover on seedling recruitment, and this conclusion was robust to different groupings of the non-woody plant cover.",none_c
 Batchelo,Though visually there appears to be an overall decrease in number of seedlings with percent grass cover I did not find it to statistically significant. I did find that there seem to be few mid sized seedlings in areas with more grass cover.,none_q
@@ -85,7 +84,6 @@ Brighton,"Grass cover does not influence grass cover. However, other vegetation 
 Brooklyn,"A significant negative effect of grass cover on seedlings recruitment densities was detected only in winter 2006 season suggesting land manager to allocate all efforts to restoring these ecosystems in the winter season. For example, incorporate appropriate weed management in winter season to increase recruitment of Eucalyptus spp. seedlings.",neg_q
 Buckland,"The number of Eucalyptus seedlings per quadrat, regardless of size, was not influenced by the percent cover of exotic and native grasses and graminoids. Instead, Eucalyptus seedling count was driven by distance from existing Eucalyptus canopy and negatively affected by ground litter cover. the greatest number of seedlings were found within 10m of the canopy edge. As grasses contribute to vegetative litter, we cannot rule out that there is an indirect affect of grass cover on seedling recruitment. However, in this case the data suggests that it is unlikely a negative direct effect of competitive exclusion for space or soil nutrients, or shading out of Eucalyptus seedlings by dense grasses/graminoids. In fact, the presence of grasses may indirectly benefit Eucalyptus recruitment by creating vegetative litter that buffers germinating seedlings from the harsh climate and makes growing conditions more suitable by helping retain soil moisture.  On the other hand, if litter is too dense it could reduce the success of seedling germination and growth.",none_q
 Bundarra,"Grass cover has no effect on Eucalyptus recruitment. Exotic perennial herb cover, landscape position (toe of slope) and thorium concentrations seem to be the variables driving seedling recruitment in the studied landscapes.",none_c
-Bundeena,Seedlings from 50 cm to 2 meters were negatively influenced only by Exotic Perennial Grass.,neg_c
 Bungonia,Grass cover does not influence the recruitment of Eucalyptus seedlings,none_c
 Busselto,"Eucalyptus seedling recruitment was significantly negatively correlated with exotic annual grass cover (P<0.001) and native perennial grass cover (P=0.004), with exotic annual grass having a larger effect. Exotic perennial grass cover had a marginally nonsignificant (P=0.075) positive association with seedlings. 
 
@@ -98,68 +96,10 @@ The semi-explorative results of other included predictors show that for initial 
 Cardwell,There was little evidence to suggest the presence or abundance of Eucalyptus spp. seedlings was influenced by exotic or native grass cover.,none_c
 Carnarvo,Grass cover does not significantly influence Eucalyptus spp. seedling recruitment,none_c
 Carrieto,NA,NA
-Bundeena,"The smallest seedlings were negatively influenced by Native Perennial Grass; Native Perennial Graminoid and Exotic Perennial Grass, these seedlings were also positively influenced by Exotic Annual Grass.",mixed
 Cassilis,"when Eucalyptus seedlings were present, their abundance increased with cover of exotic perennial grass species",pos_q
 Cervante,"There was limited evidence that grass cover, both native or exotic, had any influence on eucalyptus seedling recruitment.",none_q
 Cessnock,There is no evidence that grass cover has any influence on eucalyptus seedling recruitment.,none_c
 Charlton,"We did not detect a significant association between grass cover and seedling counts, but we are uncomfortable drawing strong biological conclusions from this study without further information, including a clearer understanding of what the treatments were, the mechanisms driving seedling recruitment, the mechanisms driving grassland responses to management, and timing of management actions relative to data collection. We suspect the Properties likely differed in terms of their initial grass and other community compositions prior to being managed for eucalypt seedling recruitment. To estimate a causal effect (â€œinfluence of grass cover on Eucalyptus spp seedling recruitmentâ€) we would prefer to conduct a randomized experiment. Alternatively, we could attempt to use causal inference techniques that rely on an assumed causal network, but constructing an appropriate causal network would require a better understanding of the ecological system (relationships between predictor variables as well as their direct and indirect effects on seedling recruitment).",none_q
 Childers,I conclude that grass cover of any type has little effect on 0 - 50 cm Eucalyptus spp. seedling recruitment. native perennial grass cover has a positive effect on 50 cm - 2 m Eucalyptus spp. seedling recruitment.,mixed
 Chiltern,"Three properties showed a positive relationship between grass cover and recruitment. In other words, higher grass cover was correlated with greater recruitment of seedlings across these three properties. However, the other 11 properties showed no directional relationship (95% confidence intervals all crossing zero), nor did the averaged estimate. Therefore, overall, we can conclude that there is weak to no evidence that grass cover has a measurable effect on eucalyptus recruitment across these properties in the Goulburn Broken Catchment, Australia.",none_q
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
+Bundeena,"Seedlings from 50 cm to 2 meters were negatively influenced only by Exotic Perennial Grass.-The smallest seedlings were negatively influenced by Native Perennial Grass; Native Perennial Graminoid and Exotic Perennial Grass, these seedlings were also positively influenced by Exotic Annual Grass.",mixed
