@@ -22,16 +22,22 @@ seeds:
     +schema: seeds
 
 models:
+  analyses:
+    +tags: ['dbt analyses']
   qn_project:
     source_entities:
       +materialized: view
       +schema: source_entities
+      +tags: ['source_entities']
     semantic:
       +materialized: ephemeral
+      +tags: ['semantic']
     analytic:
       +materialized: table
       +schema: analytic
+      +tags: ['analytic']
     dbt_artifacts:
       +materialized: table
       +schema: artifacts
+      +tags: ['dbt artifacts']
 
