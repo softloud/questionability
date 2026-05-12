@@ -1,9 +1,4 @@
-## storybook outline
-
-This document outlines the planned visualisations for the storybook that will form the spine of the argument of the manuscript.
-
-This began as a [googledocs slidedeck](https://docs.google.com/presentation/d/1bcSES6y9cs9DIkew2qR2UsUKsV_oVY8JOh3UUng2tZA/edit?slide=id.g3b1309aa85d_0_0#slide=id.g3b1309aa85d_0_0)
-but now makes more sense to write here so we can link to issues.
+storybook outline
 
 # Introduction
 
@@ -14,22 +9,61 @@ Science assumes a clear domain question with
 - well-structured data 
 - with sufficient sample  coverage 
 
-will elicit effectively the same analytic interpretation regardless of domain scientist.
-
-**This experiment challenges that assumption.**
-
-## [Exposing analytic diversity](https://github.com/users/softloud/projects/18/views/10?visibleFields=%5B%22Title%22%2C%22Labels%22%2C%22Status%22%2C%22Assignees%22%2C249832417%2C%22Parent+issue%22%2C%22Linked+pull+requests%22%2C%22Sub-issues+progress%22%2C%22Milestone%22%5D&pane=issue&itemId=148745787&issue=softloud%7Cquestionability%7C25)
+will elicit effectively the same analytic interpretation and conclusions regardless of domain scientist.
 
 question -> data -> *scientist* -> **analysis** 
 
-We show the **analysis** of the data answering the question is dependent on *scientist*.
+> graph of expectation
 
-![](../vis/analytics-flow.png)
+## Questions and data
+
+- Show questions
+- Show snapshot of data/provide dimensions
+
+## Conclusions differ, why?
+
+![](../figures/conclusions-treemap.png)
+
+## Operationalisations differ
+
+We show the **analysis** of the data answering the question is dependent on *scientists* conducting the analysis.
+
+![](../figures/analytics-flow.png)
 
 
-## Expectation vs reality
+> graph (?sankey) of reality as drawn from data
 
 We expect analyses to have a shared conclusion (derived from modelling) using (mostly) agreed-upon evidence (derived from source columns).
+
+## Flow of evidence to conclusion
+
+> Sankey plot: column categories to conclusion categories
+
+## Evidence considered differs
+
+Hmm where to place in the flow
+
+> treemap or barplot of evidence (column categories) provided by number of columns in provided data
+
+> treemap or barplot of evidence (column categories) utilised by number of teams
+
+## Conclusions are not equivalent to models
+
+> Histogram of number of models chosen per team, faceted by source
+
+## Models chosen
+
+> Sankey on modelling choices (nb some teams are counted more than once)
+
+## Forest plot on most-popular model chosen in each 
+
+- no aggregation
+
+Even when we control for modelling choice, results differ, because evidence considered and operationalisation differs
+
+# Other ideas to possibly explore
+
+Hair balls could be used to demonstrate complexity *within* column choices.
 
 ### [Expectation](https://github.com/users/softloud/projects/18/views/10?sliceBy%5Bvalue%5D=storybook+mvp&pane=issue&itemId=148744929&issue=softloud%7Cquestionability%7C20)
 
@@ -85,3 +119,8 @@ Both are informative but only part of the picture.
 This experiment demonstrates that the assumption that scientists will operationalise a domain question the same way is fundamentally flawed.
 
 By embracing many facets of analytic framing for a domain question, evidence is more informative as a whole.
+
+This document outlines the planned visualisations for the storybook that will form the spine of the argument of the manuscript.
+
+This began as a [googledocs slidedeck](https://docs.google.com/presentation/d/1bcSES6y9cs9DIkew2qR2UsUKsV_oVY8JOh3UUng2tZA/edit?slide=id.g3b1309aa85d_0_0#slide=id.g3b1309aa85d_0_0)
+but now makes more sense to write here so we can link to issues.
