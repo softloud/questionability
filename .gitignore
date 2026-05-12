@@ -22,3 +22,5 @@ dbt/models/analyses/blackboard.sql
 # duckdb
 dev.duckdb
 .Rhistory
+.Rproj.user/
+
