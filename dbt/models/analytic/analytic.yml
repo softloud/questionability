@@ -2,6 +2,21 @@ version: 2
 
 models:
 
+  - name: ana_source__model__column
+    data_tests:
+      - unique:
+          column_name: "source_id || '-' || model_id || '-' || column_id"
+    columns:
+      - name: source_id
+        data_tests:
+          - not_null
+      - name: model_id
+        data_tests:
+          - not_null
+      - name: column_id
+        data_tests:
+          - not_null
+
   - name: ana_source__model
     data_tests:
       - unique:
@@ -64,3 +79,4 @@ models:
       - name: team_id
         data_tests:
           - not_null
+

@@ -1,12 +1,7 @@
 with teams as (
   select 
-    *, 
-    case when conclusion_category like 'neg%' then 'negative' 
-         when conclusion_category like 'pos%' then 'positive'
-         when conclusion_category like 'mixed%' then 'mixed'
-         when conclusion_category like 'none%' then 'none' 
-       else conclusion_category end as conclusion_direction  
-from {{ ref("sem_source__team") }}
+    *
+  from {{ ref("sem_source__team") }}
 ),
 sources as (
   select *
