@@ -30,14 +30,14 @@ We show the **analysis** of the data answering the question is dependent on *sci
 
 ![](../figures/analytics-flow.png)
 
-
-> graph (?sankey) of reality as drawn from data
-
 We expect analyses to have a shared conclusion (derived from modelling) using (mostly) agreed-upon evidence (derived from source columns).
+
+![](../figures/conclusions-alluvial.png)
 
 ## Flow of evidence to conclusion
 
-> Sankey plot: column categories to conclusion categories
+
+![](../figures/conclusions-alluvial-filtered-10.png)
 
 ## Evidence considered differs
 
