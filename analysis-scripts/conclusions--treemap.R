@@ -28,4 +28,4 @@ data %>%
   facet_wrap(~source_label) +
   theme_minimal()
 
-ggsave('figures/conclusions-treemap.png', width = 10, height = 6)
+ggsave('figures/conclusions--treemap.png', width = 10, height = 6)
