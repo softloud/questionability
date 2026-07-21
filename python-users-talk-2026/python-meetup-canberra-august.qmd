@@ -1,7 +1,7 @@
 ---
 title: "Orchestration and Analytic Turtles"
-subtitle: "Why and how I use a modern data stack for small and  enterprise-scale projects alike"
-author: "Interruption warmly encouraged!"
+subtitle: "Why and how <br> I use a modern data stack for small and  enterprise-scale projects alike"
+author: "Interruption warmly encouraged! <br> github: softloud/questionability"
 date: "August 6, 2026"
 format:
   revealjs:
@@ -310,16 +310,101 @@ have domain-specific workflows
 
 ## The keys to the Dagster kingdom
 
-- Assets
+::: {.columns}
+
+::: {.column width="70%"}
+
+::: {.callout-tip title="The essence of orchestration"}
+
+Executing a DAG of scripts.
+
+:::
+
+### scaffolding
+
+- Project
 - Definitions
-- Scaffolding
+- Assets
+
+:::
+
+::: {.column width="30%"}
+
+
+### useful features
+
 - Integration
+- Scheduling
+- Testing
+- Observability
+
+::: 
+
+:::
+
+## project.py
+
+```python
+
+DBT_PROJECT = DbtProject(
+    project_dir=Path(__file__).parent.parent / "dbt",
+    profiles_dir=Path(__file__).parent.parent / "dbt",
+)
+DBT_PROJECT.prepare_if_dev()
+
+```
+
+## definitions.py
+
+```python
+defs = Definitions(
+    assets=[
+        sync_seeds,
+        dbt_seed,
+        dbt_assets,
+        export_analytic_csvs,
+        write_vis.conclusions_treemap,
+    ],
+    jobs=[seed_refresh_job],
+    resources={
+        "dbt": DbtCliResource(project_dir=DBT_PROJECT),
+    }
+)
+```
 
 
-## Assets
+## assets.py
 
-## Definitions
+```python
+@dagster_dbt_assets(manifest=DBT_PROJECT.manifest_path)
+def dbt_assets(context: AssetExecutionContext, dbt: DbtCliResource):
+    yield from dbt.cli(["build"], context=context).stream()
+```
 
-## Scaffolding
+## let's run it and break it!
 
-## Integration
+```shell
+run dagster dev -m dagster_qn
+
+```
+
+## Thanks for listening
+
+github: softloud/questionability
+
+```shell
+.
+├── analysis-scripts
+├── dagster_qn
+├── data
+├── dbt
+├── docs
+├── dot
+├── figures
+├── Makefile
+├── python-users-talk-2026
+├── R
+├── README.md
+
+```
+
