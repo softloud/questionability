@@ -17,9 +17,11 @@ source | file | grain (unique row)
 eucalyptus | `source-data/euc_team_model.csv` | team, model
 eucalyptus | `source-data/euc_team.csv` | team
 eucalyptus | `source-data/euc_column.csv` | column
+eucalyptus | `source-data/euc_experiment.csv` | experiment
 bluetit | `source-data/tit_team_model.csv` | team, model
 bluetit | `source-data/tit_team.csv` | team
 bluetit | `source-data/tit_column.csv` | column
+bluetit | `source-data/tit_experiment.csv` | experiment
 
 For euc_team_model data source file, drop rows where all columns are listed as NAs. These rows correspond to models that did not answer the designated research question. 
 
