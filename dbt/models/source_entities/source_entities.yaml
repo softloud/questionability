@@ -4,11 +4,14 @@ models:
 
   - name: se_euc__team__model
     description: Eucalyptus study source data.
+    data_tests:
+      unique_comb
     columns:
       - name: model_id
         data_tests:
           - unique
           - not_null
+  
 
   - name: se_tit__team__model
     description: Blue tit study source data.
