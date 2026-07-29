@@ -276,7 +276,7 @@ instantiated as a dbt graph
 
 ## Instruments and instrumentalists
 
-Orchestrators enable conducting instrumentalists playing different instruments to produce a symphony of analytic outputs
+Orchestrators enable conducting instrumentalists playing different instruments to produce a concerto of analytic outputs with the domain expert as the soloist.
 
 <hr>
 
@@ -286,6 +286,7 @@ Orchestrators enable conducting instrumentalists playing different instruments t
 
 ### Instruments
 
+- domain
 - "the data"
 - R/ggplot2
 - SQL/dbt
@@ -299,11 +300,9 @@ Orchestrators enable conducting instrumentalists playing different instruments t
 
 ### Instrumentalists
 
-- Datapunk (jill of all languages, mistress of none) 
+- **domain soloist**: Ecologist (R) 
 
-- Ecologist (R) 
-
-have domain-specific workflows
+- **orchestral accompaniment**: Datapunk (jill of all languages, mistress of none) -> no domain knowledge 
 
 :::
 :::
