@@ -14,5 +14,5 @@ def sync_seeds() -> None:
 @asset(group_name="seeds", deps=[sync_seeds])
 def dbt_seed(dbt: DbtCliResource) -> None:
     """Loads seed CSVs into the database via dbt seed."""
-    dbt.cli(["seed"]).wait()
+    dbt.cli(["seed", "--full-refresh"]).wait()
 

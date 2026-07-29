@@ -10,7 +10,7 @@ source("analysis-scripts/colour-palettes.R")
 # treemap
 data %>%
   filter(conclusion_direction != "missing") %>%
-  group_by(source_label, conclusion_direction, conclusion_category) %>%
+  group_by(source_label, conclusion_direction, conclusion_certainty) %>%
   summarise(n_teams = n()) %>%
   mutate(
     n_teams_label = str_c ("teams = ", n_teams)
@@ -19,7 +19,7 @@ data %>%
     area = n_teams, 
     fill = conclusion_direction,
     subgroup = conclusion_direction, 
-    label = conclusion_category)) +
+    label = conclusion_certainty)) +
   geom_treemap() +
   geom_treemap_text(colour = "white", size = 15) +
   geom_treemap_text(
