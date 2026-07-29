@@ -135,6 +135,28 @@ edge [style=dotted]
 
 ```
 
+# Many answers
+
+---
+
+```{r}
+conclusions_treemap <- readr::read_rds("../figures/rds/conclusions--treemap.rds")
+
+conclusions_treemap
+
+```
+
+
+
+---
+
+```{r}
+conclusive_qualified_treemap <- readr::read_rds("../figures/rds/conclusions--treemap--conclusive-qualified.rds")
+
+conclusive_qualified_treemap
+
+```
+
 # Orchestration
 using Dagster to manage analytic iteration
 
@@ -274,11 +296,11 @@ instantiated as a dbt graph
 
 :::
 
-## Instruments and instrumentalists
+# Instruments and instrumentalists
 
 Orchestrators enable conducting instrumentalists playing different instruments to produce a concerto of analytic outputs with the domain expert as the soloist.
 
-<hr>
+---
 
 ::: {.columns}
 
