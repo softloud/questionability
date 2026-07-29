@@ -23,9 +23,8 @@ aggregated as (
     model_columns.*,
     team_model.team_id,
     columns.column_category,
-    teams.conclusion_category,
+    teams.conclusion_certainty,
     teams.conclusion_direction,
-    teams.conclusion_category_label,
     source_label.source_label
   from model_columns  
   join team_model 
