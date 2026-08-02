@@ -3,8 +3,6 @@
 with team_model as (
     select *
     from {{ ref('euc_team_model') }}
-    -- see docs
-    where team_id != 'Bungonia'
 ),
 unpivoted as (
   select model_id, column_id
