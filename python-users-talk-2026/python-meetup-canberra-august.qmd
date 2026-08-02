@@ -137,6 +137,15 @@ edge [style=dotted]
 
 # Many answers
 
+## Analytic turtles
+
+```{r}
+model_hist <- readr::read_rds("../figures/rds/model-counts--histogram.rds")
+
+model_hist
+
+```
+
 ---
 
 ```{r}
