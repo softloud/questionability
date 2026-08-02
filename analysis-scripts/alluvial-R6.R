@@ -175,6 +175,6 @@ Eviconc_alluvial <- R6Class("Eviconc_alluvial",
 eviconc <- Eviconc_alluvial$new()
 eviconc$get_category_counts()
 eviconc$get_direction_counts()
-eviconc$get_plot_data() |> View()
+eviconc$get_plot_data()
 eviconc$plot()
 eviconc$save_plot()
