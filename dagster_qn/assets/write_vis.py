@@ -38,7 +38,7 @@ def run_vis_script(
     context.log.info(f"Output written to {output_path}")
     return Output(output_path)
 
-# instantiate day times scatterplot
+# conclusions_treemap asset definition
 @asset(
     group_name="analysis",
     deps=[
@@ -47,3 +47,13 @@ def run_vis_script(
 )
 def conclusions_treemap(context: AssetExecutionContext) -> Output[Path]:
     return run_vis_script(context, "conclusions--treemap")
+
+# eviconc_alluvial asset definition
+@asset(
+    group_name="analysis",
+    deps=[
+        AssetKey(["export_analytic_csvs"]),
+    ]
+)
+def eviconc_alluvial(context: AssetExecutionContext) -> Output[Path]:
+    return run_vis_script(context, "alluvial-R6")

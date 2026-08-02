@@ -22,6 +22,7 @@ defs = Definitions(
         dbt_assets,
         export_analytic_csvs,
         write_vis.conclusions_treemap,
+        write_vis.eviconc_alluvial,
     ],
     jobs=[seed_refresh_job],
     resources={
