@@ -16,6 +16,13 @@ format:
     height: 675
 ---
 
+```{r}
+library(R6)
+library(tidyverse)
+library(ggalluvial)
+
+```
+
 # Many analysts, many answers
 142 expert teams, same data, same questions
 
@@ -178,6 +185,15 @@ conclusions_treemap
 conclusive_qualified_treemap <- readr::read_rds("../figures/rds/conclusions--treemap--conclusive-qualified.rds")
 
 conclusive_qualified_treemap
+
+```
+
+---
+
+```{r alluvial}
+conclusions_alluvial <- readr::read_rds("../figures/rds/evidence-conclusion--alluvial.rds")
+
+conclusions_alluvial
 
 ```
 

@@ -9,4 +9,3 @@ with renamed as(
 )
 select *
 from renamed
-where team_id != 'Bungonia'

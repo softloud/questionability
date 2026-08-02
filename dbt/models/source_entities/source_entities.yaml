@@ -5,6 +5,16 @@ models:
   - name: se_euc__team__model
     description: Eucalyptus study source data. Bungonia removed because they did not fill in the model reporting survey correctly.
     columns:
+      - name: team_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('se_euc__team')
+                field: team_id
+              config:
+                error_if: ">0"
+                warn_if: ">0"
       - name: model_id
         data_tests:
           - unique
@@ -14,6 +24,15 @@ models:
   - name: se_tit__team__model
     description: Blue tit study source data.
     columns:
+      - name: team_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('se_tit__team')
+                field: team_id
+              config:
+                severity: warn
       - name: model_id
         data_tests:
           - unique

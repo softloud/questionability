@@ -1,0 +1,7 @@
+version: 2
+
+analyses:
+  - name: tarsus_counts
+    description: "Check for issue #191, validate the evidence is tarsus count in the alluvial diagram; there is only column associated with tarsus: day_14_tarsus_length"
+  - name: euc_conc_none_counts
+    description: "Check for issue #191, validate the conclusion is none in the alluvial diagram"  
