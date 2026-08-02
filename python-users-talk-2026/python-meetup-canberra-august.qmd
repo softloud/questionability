@@ -17,7 +17,7 @@ format:
 ---
 
 # Many analysts, many answers
-150 expert teams, same data, same questions
+142 expert teams, same data, same questions
 
 
 ## Analytic questions
@@ -25,7 +25,7 @@ format:
 :::: {.columns}
 
 ::: {.column width="30%"}
-- 150 expert teams
+- 142 expert teams
 - same data
 - same questions
 
@@ -41,13 +41,28 @@ Analytic Question?
 ::: {.callout-tip title="Domain question"}
 To what extent is the growth of nestling blue tits (Cyanistes caeruleus) influenced by competition with siblings?
 :::
-data: n rows x m columns
+
+```{r}
+tit_exp <- readr::read_csv("../source-data/tit_experiment.csv")
+
+dim_tit <- dim(tit_exp)
+
+```
+
+data: `r dim_tit[1]` rows x `r dim_tit[2]` columns
+| teams: 77
 
 ::: {.callout-tip title="Domain question"}
 How does grass cover influence Eucalyptus spp. seedling recruitment?
 :::
+        
+```{r}
+euc_exp <- readr::read_csv("../source-data/euc_experiment.csv")
+dim_euc <- dim(euc_exp)     
+```
 
-data: n rows x m columns
+data: `r dim_euc[1]` rows x `r dim_euc[2]` columns
+| teams: 66
 :::
 
 ::::
