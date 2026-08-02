@@ -10,26 +10,9 @@ raw_df <- read_csv("data/source__model__column.csv")
 # load conclusions palette
 source("analysis-scripts/colour-palettes.R")
 
-df <- raw_df %>%
-  filter(conclusion_certainty == "conclusive") %>%
-  group_by(source_label, column_category, conclusion_certainty, conclusion_direction) %>%
-  summarise(n_teams = n_distinct(team_id)) %>%
-  ungroup()
 
-raw_df |>
-  filter(conclusion_certainty == "conclusive") %>%
-  group_by(source_label) |>
-  summarise(total_teams = n_distinct(team_id)) 
-  
-plt_fn <- function(df, filtered_n = NULL) {
-  if (!is.null(filtered_n)) {
-    df <- df %>%
-      filter(n_teams > filtered_n)
-    caption <- paste0("Combinations < ", filtered_n, " teams are not shown")
-  } else {
-    caption <- "All combinations are shown"
-  }
-  
+
+plt_fn <- function(raw_df) {  
   # Calculate actual unique teams per category (accounting for teams choosing multiple categories)
   col_cat_counts <- raw_df %>%
     filter(conclusion_certainty == "conclusive") %>%
@@ -88,8 +71,7 @@ plt_fn <- function(df, filtered_n = NULL) {
     labs(
       title = "Proportion of teams that chose evidence, conclusion, and direction combinations",
       fill = "Conclusion direction",
-      y = "",
-      caption = caption) +
+      y = "") +
     theme_minimal(
       base_size = 15
     ) +
@@ -101,7 +83,6 @@ plt_fn <- function(df, filtered_n = NULL) {
       legend.position = "bottom")
 }
 ggsave(plot = plt_fn(df), filename = 'figures/conclusions-alluvial.png', width = 12, height = 8)
-ggsave(plot = plt_fn(df, filtered_n = 10), filename = 'figures/conclusions-alluvial-filtered-10.png', width = 12, height = 8)
 
 ## debugging exploration
 
