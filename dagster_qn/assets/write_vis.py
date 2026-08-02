@@ -197,4 +197,4 @@ def eviconc_alluvial(context: AssetExecutionContext) -> Output[Path]:
     Runs: analysis-scripts/alluvial-R6.R
     Output: figures/alluvial-R6.png
     """
-    return run_vis_script(context, "alluvial-R6")
+    return run_vis_script(context, "evidence-conclusion--alluvial")
