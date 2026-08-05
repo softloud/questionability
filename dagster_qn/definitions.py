@@ -7,6 +7,7 @@ from dagster_qn.assets import (
     sync_seeds,
     export_analytic_csvs,
     write_vis,
+    slides,
 )
 from dagster_qn.project import DBT_PROJECT
 
@@ -23,6 +24,7 @@ defs = Definitions(
         export_analytic_csvs,
         write_vis.conclusions_treemap,
         write_vis.eviconc_alluvial,
+        slides.python_meetup_slides,
     ],
     jobs=[seed_refresh_job],
     resources={

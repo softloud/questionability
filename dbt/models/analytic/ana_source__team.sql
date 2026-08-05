@@ -9,7 +9,7 @@ sources as (
 )
 
 select 
-  teams.*,
+  teams.*
   sources.source_label
 from teams
 left join sources

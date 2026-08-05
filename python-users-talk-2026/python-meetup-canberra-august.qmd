@@ -27,6 +27,7 @@ library(ggalluvial)
 142 expert teams, same data, same questions
 
 
+
 ## Analytic questions
 
 :::: {.columns}
@@ -73,6 +74,38 @@ data: `r dim_euc[1]` rows x `r dim_euc[2]` columns
 :::
 
 ::::
+
+## 
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+
+![](hannah-blue-tits.jpeg)
+
+:::
+
+::: {.column width="60%"}
+
+### Experiment conducted by
+
+Dr Hannah S. Fraser
+
+featured with **blue tits** and **eucalyptus** background
+
+
+(University of Melbourne)
+
+
+- Ecologist 
+- Metascientist
+- Badass human
+
+
+:::
+:::
+
 
 ## Expectation
 
@@ -391,7 +424,6 @@ Executing a DAG of scripts.
 
 ::: {.column width="30%"}
 
-
 ### useful features
 
 - Integration
@@ -402,6 +434,15 @@ Executing a DAG of scripts.
 ::: 
 
 :::
+
+---
+
+![](dagster-pipeline.png)
+
+---
+
+![](dagster-detail.png)
+
 
 ## project.py
 
@@ -448,6 +489,11 @@ def dbt_assets(context: AssetExecutionContext, dbt: DbtCliResource):
 run dagster dev -m dagster_qn
 
 ```
+
+---
+
+![](dagster-pipeline-fail-collapsed.svg){width="100%"}
+
 
 ## Thanks for listening
 
